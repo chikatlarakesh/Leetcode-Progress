@@ -6,6 +6,7 @@
 ## Array
 |  |
 | ------- |
+| [0118-pascals-triangle](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0118-pascals-triangle) |
 | [1001-n-repeated-element-in-size-2n-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1001-n-repeated-element-in-size-2n-array) |
 | [1034-subarrays-with-k-different-integers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1034-subarrays-with-k-different-integers) |
 ## Hash Table
@@ -21,4 +22,8 @@
 |  |
 | ------- |
 | [1034-subarrays-with-k-different-integers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1034-subarrays-with-k-different-integers) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0118-pascals-triangle](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0118-pascals-triangle) |
 <!---LeetCode Topics End-->
