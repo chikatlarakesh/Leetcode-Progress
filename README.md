@@ -26,4 +26,12 @@
 |  |
 | ------- |
 | [0118-pascals-triangle](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0118-pascals-triangle) |
+## String
+|  |
+| ------- |
+| [0812-rotate-string](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0812-rotate-string) |
+## String Matching
+|  |
+| ------- |
+| [0812-rotate-string](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0812-rotate-string) |
 <!---LeetCode Topics End-->
