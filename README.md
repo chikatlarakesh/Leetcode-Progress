@@ -6,6 +6,7 @@
 ## Array
 |  |
 | ------- |
+| [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
 | [0118-pascals-triangle](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0118-pascals-triangle) |
 | [1001-n-repeated-element-in-size-2n-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1001-n-repeated-element-in-size-2n-array) |
 | [1034-subarrays-with-k-different-integers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1034-subarrays-with-k-different-integers) |
@@ -35,4 +36,8 @@
 |  |
 | ------- |
 | [0812-rotate-string](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0812-rotate-string) |
+## Binary Search
+|  |
+| ------- |
+| [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
 <!---LeetCode Topics End-->
