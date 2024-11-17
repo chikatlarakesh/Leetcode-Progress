@@ -32,6 +32,7 @@
 | ------- |
 | [0812-rotate-string](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0812-rotate-string) |
 | [3451-string-compression-iii](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3451-string-compression-iii) |
+| [3636-check-balanced-string](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3636-check-balanced-string) |
 ## String Matching
 |  |
 | ------- |
