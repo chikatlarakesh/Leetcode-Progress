@@ -13,6 +13,7 @@
 | [1001-n-repeated-element-in-size-2n-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1001-n-repeated-element-in-size-2n-array) |
 | [1034-subarrays-with-k-different-integers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1034-subarrays-with-k-different-integers) |
 | [1408-find-the-smallest-divisor-given-a-threshold](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1408-find-the-smallest-divisor-given-a-threshold) |
+| [1605-minimum-number-of-days-to-make-m-bouquets](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1605-minimum-number-of-days-to-make-m-bouquets) |
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
 | [2614-maximum-count-of-positive-integer-and-negative-integer](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2614-maximum-count-of-positive-integer-and-negative-integer) |
 ## Hash Table
@@ -49,6 +50,7 @@
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
 | [0907-koko-eating-bananas](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0907-koko-eating-bananas) |
 | [1408-find-the-smallest-divisor-given-a-threshold](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1408-find-the-smallest-divisor-given-a-threshold) |
+| [1605-minimum-number-of-days-to-make-m-bouquets](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1605-minimum-number-of-days-to-make-m-bouquets) |
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
 | [2614-maximum-count-of-positive-integer-and-negative-integer](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2614-maximum-count-of-positive-integer-and-negative-integer) |
 ## Two Pointers
