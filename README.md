@@ -17,6 +17,7 @@
 | [1605-minimum-number-of-days-to-make-m-bouquets](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1605-minimum-number-of-days-to-make-m-bouquets) |
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
 | [2614-maximum-count-of-positive-integer-and-negative-integer](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2614-maximum-count-of-positive-integer-and-negative-integer) |
+| [3221-find-the-peaks](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3221-find-the-peaks) |
 ## Hash Table
 |  |
 | ------- |
@@ -75,4 +76,8 @@
 |  |
 | ------- |
 | [0954-maximum-sum-circular-subarray](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0954-maximum-sum-circular-subarray) |
+## Enumeration
+|  |
+| ------- |
+| [3221-find-the-peaks](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3221-find-the-peaks) |
 <!---LeetCode Topics End-->
