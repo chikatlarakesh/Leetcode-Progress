@@ -8,6 +8,7 @@
 | ------- |
 | [0031-next-permutation](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0031-next-permutation) |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
+| [0054-spiral-matrix](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0054-spiral-matrix) |
 | [0118-pascals-triangle](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0118-pascals-triangle) |
 | [0907-koko-eating-bananas](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0907-koko-eating-bananas) |
 | [0954-maximum-sum-circular-subarray](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0954-maximum-sum-circular-subarray) |
@@ -80,4 +81,12 @@
 |  |
 | ------- |
 | [3221-find-the-peaks](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3221-find-the-peaks) |
+## Matrix
+|  |
+| ------- |
+| [0054-spiral-matrix](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0054-spiral-matrix) |
+## Simulation
+|  |
+| ------- |
+| [0054-spiral-matrix](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0054-spiral-matrix) |
 <!---LeetCode Topics End-->
