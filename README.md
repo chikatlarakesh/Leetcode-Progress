@@ -67,6 +67,7 @@
 | ------- |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0031-next-permutation](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0031-next-permutation) |
+| [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
 ## Greedy
 |  |
 | ------- |
@@ -99,4 +100,16 @@
 |  |
 | ------- |
 | [0560-subarray-sum-equals-k](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0560-subarray-sum-equals-k) |
+## Linked List
+|  |
+| ------- |
+| [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
+## Stack
+|  |
+| ------- |
+| [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
+## Recursion
+|  |
+| ------- |
+| [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
 <!---LeetCode Topics End-->
