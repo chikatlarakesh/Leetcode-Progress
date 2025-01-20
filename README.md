@@ -103,6 +103,7 @@
 ## Linked List
 |  |
 | ------- |
+| [0002-add-two-numbers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0002-add-two-numbers) |
 | [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
 ## Stack
 |  |
@@ -111,5 +112,10 @@
 ## Recursion
 |  |
 | ------- |
+| [0002-add-two-numbers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0002-add-two-numbers) |
 | [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
+## Math
+|  |
+| ------- |
+| [0002-add-two-numbers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0002-add-two-numbers) |
 <!---LeetCode Topics End-->
