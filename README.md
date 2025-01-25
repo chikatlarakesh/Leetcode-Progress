@@ -105,6 +105,7 @@
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0002-add-two-numbers) |
+| [0021-merge-two-sorted-lists](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0021-merge-two-sorted-lists) |
 | [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
 | [0528-swapping-nodes-in-a-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0528-swapping-nodes-in-a-linked-list) |
 ## Stack
@@ -115,6 +116,7 @@
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0002-add-two-numbers) |
+| [0021-merge-two-sorted-lists](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0021-merge-two-sorted-lists) |
 | [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
 ## Math
 |  |
