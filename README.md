@@ -6,6 +6,7 @@
 ## Array
 |  |
 | ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0004-median-of-two-sorted-arrays) |
 | [0026-remove-duplicates-from-sorted-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0031-next-permutation](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0031-next-permutation) |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
@@ -55,6 +56,7 @@
 ## Binary Search
 |  |
 | ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0004-median-of-two-sorted-arrays) |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
 | [0907-koko-eating-bananas](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0907-koko-eating-bananas) |
 | [1408-find-the-smallest-divisor-given-a-threshold](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1408-find-the-smallest-divisor-given-a-threshold) |
@@ -76,6 +78,7 @@
 ## Divide and Conquer
 |  |
 | ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0004-median-of-two-sorted-arrays) |
 | [0954-maximum-sum-circular-subarray](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0954-maximum-sum-circular-subarray) |
 ## Queue
 |  |
