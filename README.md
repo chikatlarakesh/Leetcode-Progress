@@ -13,6 +13,7 @@
 | [0054-spiral-matrix](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0054-spiral-matrix) |
 | [0118-pascals-triangle](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0118-pascals-triangle) |
 | [0560-subarray-sum-equals-k](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0560-subarray-sum-equals-k) |
+| [0739-daily-temperatures](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0739-daily-temperatures) |
 | [0907-koko-eating-bananas](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0907-koko-eating-bananas) |
 | [0954-maximum-sum-circular-subarray](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0954-maximum-sum-circular-subarray) |
 | [1001-n-repeated-element-in-size-2n-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1001-n-repeated-element-in-size-2n-array) |
@@ -117,6 +118,7 @@
 |  |
 | ------- |
 | [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
+| [0739-daily-temperatures](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0739-daily-temperatures) |
 ## Recursion
 |  |
 | ------- |
@@ -127,4 +129,8 @@
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0002-add-two-numbers) |
+## Monotonic Stack
+|  |
+| ------- |
+| [0739-daily-temperatures](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0739-daily-temperatures) |
 <!---LeetCode Topics End-->
