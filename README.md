@@ -10,6 +10,7 @@
 | [0026-remove-duplicates-from-sorted-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0026-remove-duplicates-from-sorted-array) |
 | [0031-next-permutation](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0031-next-permutation) |
 | [0034-find-first-and-last-position-of-element-in-sorted-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0034-find-first-and-last-position-of-element-in-sorted-array) |
+| [0047-permutations-ii](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0047-permutations-ii) |
 | [0054-spiral-matrix](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0054-spiral-matrix) |
 | [0078-subsets](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0078-subsets) |
 | [0118-pascals-triangle](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0118-pascals-triangle) |
@@ -137,9 +138,14 @@
 ## Backtracking
 |  |
 | ------- |
+| [0047-permutations-ii](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0047-permutations-ii) |
 | [0078-subsets](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0078-subsets) |
 ## Bit Manipulation
 |  |
 | ------- |
 | [0078-subsets](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0078-subsets) |
+## Sorting
+|  |
+| ------- |
+| [0047-permutations-ii](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0047-permutations-ii) |
 <!---LeetCode Topics End-->
