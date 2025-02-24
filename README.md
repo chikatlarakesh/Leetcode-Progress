@@ -28,6 +28,7 @@
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
 | [2614-maximum-count-of-positive-integer-and-negative-integer](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2614-maximum-count-of-positive-integer-and-negative-integer) |
 | [3221-find-the-peaks](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3221-find-the-peaks) |
+| [3764-maximum-sum-with-at-most-k-elements](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3764-maximum-sum-with-at-most-k-elements) |
 ## Hash Table
 |  |
 | ------- |
@@ -80,6 +81,7 @@
 |  |
 | ------- |
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
+| [3764-maximum-sum-with-at-most-k-elements](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3764-maximum-sum-with-at-most-k-elements) |
 ## Divide and Conquer
 |  |
 | ------- |
@@ -101,6 +103,7 @@
 |  |
 | ------- |
 | [0054-spiral-matrix](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0054-spiral-matrix) |
+| [3764-maximum-sum-with-at-most-k-elements](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3764-maximum-sum-with-at-most-k-elements) |
 ## Simulation
 |  |
 | ------- |
@@ -148,4 +151,9 @@
 |  |
 | ------- |
 | [0047-permutations-ii](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0047-permutations-ii) |
+| [3764-maximum-sum-with-at-most-k-elements](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3764-maximum-sum-with-at-most-k-elements) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [3764-maximum-sum-with-at-most-k-elements](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3764-maximum-sum-with-at-most-k-elements) |
 <!---LeetCode Topics End-->
