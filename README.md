@@ -53,6 +53,7 @@
 |  |
 | ------- |
 | [0812-rotate-string](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0812-rotate-string) |
+| [2128-reverse-prefix-of-word](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2128-reverse-prefix-of-word) |
 | [3451-string-compression-iii](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3451-string-compression-iii) |
 | [3636-check-balanced-string](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3636-check-balanced-string) |
 ## String Matching
@@ -77,6 +78,7 @@
 | [0031-next-permutation](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0031-next-permutation) |
 | [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
 | [0528-swapping-nodes-in-a-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0528-swapping-nodes-in-a-linked-list) |
+| [2128-reverse-prefix-of-word](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2128-reverse-prefix-of-word) |
 ## Greedy
 |  |
 | ------- |
@@ -124,6 +126,7 @@
 | ------- |
 | [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
 | [0739-daily-temperatures](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0739-daily-temperatures) |
+| [2128-reverse-prefix-of-word](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2128-reverse-prefix-of-word) |
 ## Recursion
 |  |
 | ------- |
