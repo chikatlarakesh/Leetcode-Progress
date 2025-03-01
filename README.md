@@ -26,6 +26,7 @@
 | [1878-check-if-array-is-sorted-and-rotated](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1878-check-if-array-is-sorted-and-rotated) |
 | [1927-maximum-ascending-subarray-sum](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1927-maximum-ascending-subarray-sum) |
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
+| [2551-apply-operations-to-an-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2551-apply-operations-to-an-array) |
 | [2614-maximum-count-of-positive-integer-and-negative-integer](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2614-maximum-count-of-positive-integer-and-negative-integer) |
 | [3221-find-the-peaks](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3221-find-the-peaks) |
 | [3764-maximum-sum-with-at-most-k-elements](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3764-maximum-sum-with-at-most-k-elements) |
@@ -79,6 +80,7 @@
 | [0234-palindrome-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0234-palindrome-linked-list) |
 | [0528-swapping-nodes-in-a-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0528-swapping-nodes-in-a-linked-list) |
 | [2128-reverse-prefix-of-word](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2128-reverse-prefix-of-word) |
+| [2551-apply-operations-to-an-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2551-apply-operations-to-an-array) |
 ## Greedy
 |  |
 | ------- |
@@ -110,6 +112,7 @@
 |  |
 | ------- |
 | [0054-spiral-matrix](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0054-spiral-matrix) |
+| [2551-apply-operations-to-an-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2551-apply-operations-to-an-array) |
 ## Prefix Sum
 |  |
 | ------- |
