@@ -28,6 +28,7 @@
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
 | [2551-apply-operations-to-an-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2551-apply-operations-to-an-array) |
 | [2614-maximum-count-of-positive-integer-and-negative-integer](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2614-maximum-count-of-positive-integer-and-negative-integer) |
+| [2707-merge-two-2d-arrays-by-summing-values](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2707-merge-two-2d-arrays-by-summing-values) |
 | [3221-find-the-peaks](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3221-find-the-peaks) |
 | [3764-maximum-sum-with-at-most-k-elements](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/3764-maximum-sum-with-at-most-k-elements) |
 ## Hash Table
@@ -37,6 +38,7 @@
 | [0560-subarray-sum-equals-k](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0560-subarray-sum-equals-k) |
 | [1001-n-repeated-element-in-size-2n-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1001-n-repeated-element-in-size-2n-array) |
 | [1034-subarrays-with-k-different-integers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1034-subarrays-with-k-different-integers) |
+| [2707-merge-two-2d-arrays-by-summing-values](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2707-merge-two-2d-arrays-by-summing-values) |
 ## Sliding Window
 |  |
 | ------- |
@@ -83,6 +85,7 @@
 | [0528-swapping-nodes-in-a-linked-list](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0528-swapping-nodes-in-a-linked-list) |
 | [2128-reverse-prefix-of-word](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2128-reverse-prefix-of-word) |
 | [2551-apply-operations-to-an-array](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2551-apply-operations-to-an-array) |
+| [2707-merge-two-2d-arrays-by-summing-values](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/2707-merge-two-2d-arrays-by-summing-values) |
 ## Greedy
 |  |
 | ------- |
