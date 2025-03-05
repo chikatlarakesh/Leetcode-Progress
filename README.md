@@ -149,6 +149,7 @@
 |  |
 | ------- |
 | [0002-add-two-numbers](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/0002-add-two-numbers) |
+| [1889-check-if-number-is-a-sum-of-powers-of-three](https://github.com/chikatlarakesh/Leetcode-Progress/tree/master/1889-check-if-number-is-a-sum-of-powers-of-three) |
 ## Monotonic Stack
 |  |
 | ------- |
