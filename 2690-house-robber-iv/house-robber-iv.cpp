@@ -2,17 +2,18 @@ class Solution {
 public:
     bool isPossible(vector<int>& nums, int k, int m)
     {
-        int i,temp=INT_MAX;
+        int i=0;
         int n=nums.size();
-        for(i=0;i<n;i++)
+        while(i<n)
         {
             if(nums[i]<=m)
             {
-                if(i-temp!=1)
-                {
-                    k--;
-                    temp=i;
-                }
+                k--;
+                i+=2;
+            }
+            else
+            {
+                i++;
             }
             if(k<=0)
             {
