@@ -54,10 +54,7 @@ public:
                 temp=temp->next;
             }
         }
-        if(start)
-        {
-            prev->next=start;
-        }
+        prev->next=start;
         return head;
     }
 };
