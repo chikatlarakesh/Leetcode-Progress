@@ -41,7 +41,7 @@ public:
                 d--;
             }
         }
-        while(t1!=t2 && t1!=NULL && t2!=NULL)
+        while(t1!=t2 && t1!=NULL)
         {
             t1=t1->next;
             t2=t2->next;
