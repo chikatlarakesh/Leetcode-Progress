@@ -12,8 +12,7 @@ public:
             }
             else if(operations[i]=="D")
             {
-                int val=st.top()*2;
-                st.push(val);
+                st.push(st.top()*2);
             }
             else if(operations[i]=="+")
             {
