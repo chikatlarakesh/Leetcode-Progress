@@ -6,9 +6,7 @@ public:
         int i;
         for(i=0;i<n;i++)
         {
-            if(s[i]=='(') st.push(s[i]);
-            else if(s[i]=='{') st.push(s[i]);
-            else if(s[i]=='[') st.push(s[i]);
+            if(s[i]=='(' || s[i]=='{' || s[i]=='[') st.push(s[i]);
             else if(st.empty()) return false;
             else if(s[i]==')' && !st.empty() && st.top()!='(') return false;
             else if(s[i]=='}' && !st.empty() && st.top()!='{') return false;
