@@ -4,7 +4,7 @@ public:
         int n=dominoes.size();
         int force=0;
         string ans="";
-        vector<int> leftForce(n);
+        //vector<int> leftForce(n);
         vector<int> rightForce(n);
         for(int i=0;i<n;i++)
         {
@@ -24,13 +24,12 @@ public:
             {
                 if(force!=0) force--;
             }
-            leftForce[i]=force;
+            rightForce[i]=rightForce[i]-force;
         }
         for(int i=0;i<n;i++)
         {
-            int diff=rightForce[i]-leftForce[i];
-            if(diff>0) ans+='R';
-            else if(diff<0) ans+='L';
+            if(rightForce[i]>0) ans+='R';
+            else if(rightForce[i]<0) ans+='L';
             else ans+='.';
         }
         return ans;
