@@ -16,6 +16,7 @@ public:
             }
             rightForce[i]=force;
         }
+        force=0;
         for(int i=n-1;i>=0;i--)
         {
             if(dominoes[i]=='L') force=n;
