@@ -53,12 +53,12 @@ public:
         int largestArea=0;
         for(i=0;i<n;i++)
         {
-            vector<int> result;
-            for(j=0;j<m;j++)
-            {
-                result.push_back(newMatrix[i][j]);
-            }
-            largestArea=max(largestArea,largestRectangleArea(result));
+            // vector<int> result;
+            // for(j=0;j<m;j++)
+            // {
+            //     result.push_back(newMatrix[i][j]);
+            // }
+            largestArea=max(largestArea,largestRectangleArea(newMatrix[i]));
         }
         return largestArea;
     }
