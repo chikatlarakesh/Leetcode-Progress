@@ -9,22 +9,16 @@ public:
             if(asteroids[i]>0) st.push(asteroids[i]);
             else
             {
-                if(!st.empty() && st.top()<0) 
-                {
-                    st.push(asteroids[i]);
-                    continue;
-                }
                 int absValue=abs(asteroids[i]);
                 while(!st.empty() && st.top()>0 && st.top()<absValue)
                 {
                     st.pop();
                 }
-                if(!st.empty() && st.top()>0 && abs(st.top())==absValue)
+                if(!st.empty() && st.top()>0 && st.top()==absValue)
                 {
                     st.pop();
-                    continue;
                 }
-                if(st.empty() || st.top()<0) st.push(asteroids[i]);
+                else if(st.empty() || st.top()<0) st.push(asteroids[i]);
             }
         }
         vector<int> finalState;
