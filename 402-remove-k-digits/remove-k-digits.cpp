@@ -7,41 +7,31 @@ public:
         int i=0;
         while(i<n)
         {
-            int val=num[i]-'0';
-            while(!st.empty() && k>0 && st.top()>val)
+            while(!st.empty() && k>0 && (st.top()-'0')>(num[i]-'0'))
             {
                 st.pop();
                 k--;
             }
-            st.push(val);
+            st.push(num[i]);
             i++;
         }
         string result="";
+        while(!st.empty() && k>0)
+        {
+            st.pop();
+            k--;
+        }
         while(!st.empty())
         {
-            while(k>0)
-            {
-                st.pop();
-                k--;
-            }
-            result+=st.top()+'0';
+            result+=st.top();
             st.pop();
         }
-        reverse(result.begin(),result.end());
-        n=result.length();
-        string ans="";
-        i=0;
-        while(i<n)
+        while(result.size()!=0 && result.back()=='0')
         {
-            if(result[i]=='0' && ans.length()==0) 
-            {
-                i++;
-                continue;
-            }
-            ans+=result[i];
-            i++;
+            result.pop_back();
         }
-        if(ans.length()==0) return "0";
-        return ans;
+        reverse(result.begin(),result.end());
+        if(result.empty()) return "0";
+        return result;
     }
 };
