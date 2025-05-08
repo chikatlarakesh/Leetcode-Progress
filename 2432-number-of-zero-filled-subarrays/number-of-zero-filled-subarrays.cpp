@@ -1,8 +1,8 @@
 class Solution {
 public:
     long long zeroFilledSubarray(vector<int>& nums) {
-        int n=nums.size();
-        int i=0;
+        // int n=nums.size();
+        // int i=0;
         long long count=0,sum=0;
         for(int num: nums)
         {
