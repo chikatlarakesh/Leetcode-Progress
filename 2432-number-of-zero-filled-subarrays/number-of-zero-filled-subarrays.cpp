@@ -3,8 +3,7 @@ public:
     long long zeroFilledSubarray(vector<int>& nums) {
         int n=nums.size();
         int i=0;
-        long long count=0;
-        long long sum=0;
+        long long count=0,sum=0;
         while(i<n)
         {
             while(i<n && nums[i]!=0)
