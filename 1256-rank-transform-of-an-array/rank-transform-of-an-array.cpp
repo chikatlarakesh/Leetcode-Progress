@@ -12,16 +12,12 @@ public:
         {
             int index=pq.top().second;
             int currElement=pq.top().first;
-            if(currElement==prevElement)
-            {
-                arr[index]=rank;
-            }
-            else
+            if(currElement!=prevElement)
             {
                 rank++;
-                arr[index]=rank;
                 prevElement=currElement;
             }
+            arr[index]=rank;
             pq.pop();
         }
         return arr;
