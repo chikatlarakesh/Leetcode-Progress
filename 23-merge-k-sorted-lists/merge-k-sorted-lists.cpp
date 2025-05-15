@@ -54,28 +54,53 @@ public:
         // }
         // return t1;
 
-        priority_queue<pair<int,ListNode*>, vector<pair<int,ListNode*>>, greater<pair<int,ListNode*>>> pq;
+        // priority_queue<pair<int,ListNode*>, vector<pair<int,ListNode*>>, greater<pair<int,ListNode*>>> pq;
+        // int n=lists.size();
+        // for(int i=0;i<n;i++)
+        // {
+        //     if(lists[i])
+        //     {
+        //         pq.push({lists[i]->val,lists[i]});
+        //     }
+        // }
+        // ListNode* dummyNode=new ListNode(-1);
+        // ListNode* temp=dummyNode;
+        // while(!pq.empty())
+        // {
+        //     auto it=pq.top();
+        //     pq.pop();
+        //     if(it.second->next!=NULL)
+        //     {
+        //         pq.push({it.second->next->val,it.second->next});
+        //     }
+        //     temp->next=it.second;
+        //     temp=it.second;
+        // }
+        // return dummyNode->next;
+
+
         int n=lists.size();
+        if(n==0) return NULL;
+        if(n==1) return lists[0];
+        priority_queue<int,vector<int>,greater<int>> pq;
         for(int i=0;i<n;i++)
         {
-            if(lists[i])
+            ListNode* t1=lists[i];
+            while(t1!=NULL)
             {
-                pq.push({lists[i]->val,lists[i]});
+                pq.push(t1->val);
+                t1=t1->next;
             }
         }
-        ListNode* dummyNode=new ListNode(-1);
-        ListNode* temp=dummyNode;
+        ListNode* prev=new ListNode(-1);
+        ListNode* dummyHead=prev;
         while(!pq.empty())
         {
-            auto it=pq.top();
+            ListNode* temp=new ListNode(pq.top());
+            prev->next=temp;
+            prev=temp;
             pq.pop();
-            if(it.second->next!=NULL)
-            {
-                pq.push({it.second->next->val,it.second->next});
-            }
-            temp->next=it.second;
-            temp=it.second;
         }
-        return dummyNode->next;
+        return dummyHead->next;
     }
 };
