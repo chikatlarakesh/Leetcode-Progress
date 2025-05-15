@@ -78,28 +78,23 @@ public:
         // }
         // return dummyNode->next;
 
-
+        priority_queue<pair<int,ListNode*>,vector<pair<int,ListNode*>>,greater<pair<int,ListNode*>>> pq;
         int n=lists.size();
-        if(n==0) return NULL;
-        if(n==1) return lists[0];
-        priority_queue<int,vector<int>,greater<int>> pq;
         for(int i=0;i<n;i++)
         {
-            ListNode* t1=lists[i];
-            while(t1!=NULL)
+            if(lists[i])
             {
-                pq.push(t1->val);
-                t1=t1->next;
+                pq.push({lists[i]->val,lists[i]});
             }
         }
-        ListNode* prev=new ListNode(-1);
-        ListNode* dummyHead=prev;
+        ListNode* dummyHead=new ListNode(-1);
+        ListNode* temp=dummyHead;
         while(!pq.empty())
         {
-            ListNode* temp=new ListNode(pq.top());
-            prev->next=temp;
-            prev=temp;
+            temp->next=pq.top().second;
             pq.pop();
+            temp=temp->next;
+            if(temp->next) pq.push({temp->next->val,temp->next});
         }
         return dummyHead->next;
     }
