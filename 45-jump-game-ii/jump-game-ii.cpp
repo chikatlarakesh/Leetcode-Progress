@@ -5,14 +5,14 @@ public:
         int l=0,r=0,jumps=0;
         while(r<n-1)
         {
-            int farthest=0;
+            int farthest=0; //ending range kanukotaniki
             for(int i=l;i<=r;i++)
             {
-                farthest=max(farthest,i+nums[i]);
+                farthest=max(farthest,i+nums[i]); // max entha dhooram ellagalav
             }
-            l=r;
-            r=farthest;
-            jumps++;
+            l=r; //assigning r to l before modifying the value of r
+            r=farthest; //assign r with the ending range
+            jumps++; // increment jumps because that is the farthest we can reach
         }
         return jumps;
 
