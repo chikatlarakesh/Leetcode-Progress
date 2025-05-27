@@ -15,6 +15,7 @@ public:
             else count=1;
         }
         count=1;
+        int minCandies=left[n-1];
         for(int i=n-2;i>=0;i--)
         {
             if(ratings[i]>ratings[i+1])
@@ -23,12 +24,12 @@ public:
                 left[i]=max(left[i],count);
             }
             else count=1;
-        }
-        int minCandies=0;
-        for(int i=0;i<n;i++)
-        {
             minCandies+=left[i];
         }
+        // for(int i=0;i<n;i++)
+        // {
+        //     minCandies+=left[i];
+        // }
         return minCandies;
     }
 };
