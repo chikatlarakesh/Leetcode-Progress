@@ -5,11 +5,10 @@ public:
         int i=1,minCandies=1;
         while(i<n)
         {
-            if(i<n && ratings[i]==ratings[i-1])
+            while(i<n && ratings[i]==ratings[i-1])
             {
                 minCandies++;
                 i++;
-                continue;
             }
             int peak=1;
             while(i<n && ratings[i]>ratings[i-1])
