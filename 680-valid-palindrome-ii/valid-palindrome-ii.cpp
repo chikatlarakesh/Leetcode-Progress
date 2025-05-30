@@ -8,11 +8,8 @@ public:
             {
                 return false;
             }
-            else
-            {
-                l++;
-                r--;
-            }
+            l++;
+            r--;
         }
         return true;
     }
@@ -30,14 +27,11 @@ public:
             }
             else
             {
-                if(!isPalindrome(s,l+1,r) && !isPalindrome(s,l,r-1))
-                {
-                    return false;
-                }
-                else
+                if(isPalindrome(s,l+1,r) || isPalindrome(s,l,r-1))
                 {
                     return true;
                 }
+                else return false;
             }
         }
         return true;
