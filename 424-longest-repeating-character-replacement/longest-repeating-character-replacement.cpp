@@ -9,18 +9,13 @@ public:
             int ind=s[r]-'A';
             hash[ind]++;
             maxFreq=max(maxFreq,hash[ind]);
-            while(r-l+1-maxFreq>k)
+            if(r-l+1-maxFreq>k)
             {
                 int ind=s[l]-'A';
                 hash[ind]--;
-                maxFreq=0;
-                for(int i=0;i<26;i++)
-                {
-                    maxFreq=max(maxFreq,hash[i]);
-                }
                 l++;
             }
-            maxLen=max(maxLen,r-l+1);
+            if(r-l+1-maxFreq<=k) maxLen=max(maxLen,r-l+1);
         }
         return maxLen;
     }
