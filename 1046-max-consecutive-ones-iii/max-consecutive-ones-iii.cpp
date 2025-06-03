@@ -11,7 +11,7 @@ public:
                 if(nums[l]==0) count--;
                 l++;
             }
-            maxLen=max(maxLen,r-l+1);
+            if(count<=k) maxLen=max(maxLen,r-l+1);
         }
         return maxLen;
     }
