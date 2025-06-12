@@ -8,7 +8,7 @@ public:
         for(int i=n-2;i>=0;i--)
         {
             count+=total;
-            if(mp.find(nums[i]-i)!=mp.end()) count-=mp[nums[i]-i];
+            count-=mp[nums[i]-i];
             mp[nums[i]-i]++;
             total++;
         }
