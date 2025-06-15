@@ -3,13 +3,10 @@ public:
     int maxDiff(int num) {
         string number=to_string(num);
         int n=number.length();
-        char smallStart=number[0];
-        char largeStart=number[0];
         char largest=number[0],smallest=number[0];
         int smallIndex=0;
-        string maximum="";
-        string minimum="";
-        if(largeStart=='9')
+        string maximum="",minimum="";
+        if(number[0]=='9')
         {
             for(char ch:number)
             {
@@ -20,7 +17,7 @@ public:
                 }
             }
         }
-        if(smallStart=='1')
+        if(number[0]=='1')
         {
             for(int i=0;i<n;i++)
             {
