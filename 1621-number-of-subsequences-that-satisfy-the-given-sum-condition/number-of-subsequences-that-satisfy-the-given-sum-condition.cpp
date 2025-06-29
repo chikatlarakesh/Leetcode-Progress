@@ -1,7 +1,7 @@
 class Solution {
 public:
-    const long long MOD=1000000007;
-    long long calculatePower(long long num,long long power)
+    const int MOD=1000000007;
+    int calculatePower(int num,int power)
     {
         if(power==0) return 1;
         long long half=calculatePower(num,power/2);
@@ -13,13 +13,13 @@ public:
         sort(nums.begin(),nums.end());
         int n=nums.size();
         int l=0,r=n-1;
-        long long count=0;
+        int count=0;
         while(l<=r)
         {
             if(nums[l]+nums[r]<=target)
             {
-                long long power=r-l;
-                count+=(calculatePower(2,power))%MOD;
+                int power=r-l;
+                count=(count+calculatePower(2,power))%MOD;
                 l++;
             }
             else r--;
