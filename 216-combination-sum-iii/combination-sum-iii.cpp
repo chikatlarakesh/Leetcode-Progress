@@ -2,7 +2,7 @@ class Solution {
 public:
     void possCombinations(int i,int k,int n,vector<int>& result,vector<vector<int>>& ans,int sum)
     {
-        if(sum>=n || k<=0 || i==10)
+        if(sum>=n || k<=0 || i>9)
         {
             if(sum==n && k==0) ans.push_back(result);
             return;
