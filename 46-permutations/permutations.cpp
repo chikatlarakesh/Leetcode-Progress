@@ -14,16 +14,15 @@ public:
             visited[i]=true;
             result.push_back(nums[i]);
             possPermutations(nums,result,ans,visited);
-            visited[i]=false;
             result.pop_back();
+            visited[i]=false;
         }
     }
 
     vector<vector<int>> permute(vector<int>& nums) {
-        int n=nums.size();
         vector<int> result;
         vector<vector<int>> ans;
-        vector<bool> visited(n,false);
+        vector<bool> visited(nums.size(),false);
         possPermutations(nums,result,ans,visited);
         return ans;
     }
