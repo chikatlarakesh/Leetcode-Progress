@@ -1,29 +1,25 @@
 class Solution {
 public:
-    void possPermutations(vector<int>& nums,vector<int>& result,vector<vector<int>>& ans,vector<bool>& visited)
+    void possPermutations(int ind,int n,vector<int>& nums,vector<int>& result,vector<vector<int>>& ans)
     {
-        if(result.size()==nums.size())
+        if(ind==n)
         {
             ans.push_back(result);
             return;
         }
-
-        for(int i=0;i<nums.size();i++)
+        for(int i=ind;i<n;i++)
         {
-            if(visited[i]==true) continue;
-            visited[i]=true;
-            result.push_back(nums[i]);
-            possPermutations(nums,result,ans,visited);
-            result.pop_back();
-            visited[i]=false;
+            swap(result[i],result[ind]);
+            possPermutations(ind+1,n,nums,result,ans);
+            swap(result[i],result[ind]);
         }
     }
 
     vector<vector<int>> permute(vector<int>& nums) {
-        vector<int> result;
+        int n=nums.size();
+        vector<int> result=nums;
         vector<vector<int>> ans;
-        vector<bool> visited(nums.size(),false);
-        possPermutations(nums,result,ans,visited);
+        possPermutations(0,n,nums,result,ans);
         return ans;
     }
 };
