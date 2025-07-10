@@ -10,7 +10,7 @@ public:
             freeTime.push_back(startTime[i]-endTime[i-1]);
         }
         freeTime.push_back(eventTime-endTime[n-1]);
-        k++;
+        k=k+1;
         for(int r=0;r<freeTime.size();r++)
         {
             sum+=freeTime[r];
