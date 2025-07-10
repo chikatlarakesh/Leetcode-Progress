@@ -1,22 +1,27 @@
 class Solution {
 public:
     int maxFreeTime(int eventTime, int k, vector<int>& startTime, vector<int>& endTime) {
-        int count = startTime.size();
-        vector<int> prefixSum(count + 1, 0);
-        int maxFree = 0;
-
-        for (int i = 0; i < count; ++i) {
-            prefixSum[i + 1] = prefixSum[i] + (endTime[i] - startTime[i]);
+        vector<int> freeTime;
+        freeTime.push_back(startTime[0]);
+        int maxFreeTime=0,l=0,sum=0;
+        int n=startTime.size();
+        for(int i=1;i<n;i++)
+        {
+            freeTime.push_back(startTime[i]-endTime[i-1]);
+        }
+        freeTime.push_back(eventTime-endTime[n-1]);
+        k++;
+        for(int r=0;r<freeTime.size();r++)
+        {
+            sum+=freeTime[r];
+            if(r-l+1>k)
+            {
+                sum-=freeTime[l];
+                l++;
+            }
+            maxFreeTime=max(sum,maxFreeTime); 
         }
 
-        for (int i = k - 1; i < count; ++i) {
-            int occupied = prefixSum[i + 1] - prefixSum[i - k + 1];
-            int windowEnd = (i == count - 1) ? eventTime : startTime[i + 1];
-            int windowStart = (i == k - 1) ? 0 : endTime[i - k];
-            int freeTime = windowEnd - windowStart - occupied;
-            maxFree = max(maxFree, freeTime);
-        }
-
-        return maxFree;
+        return maxFreeTime;
     }
 };
