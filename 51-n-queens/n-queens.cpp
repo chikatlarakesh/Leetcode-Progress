@@ -40,9 +40,9 @@ public:
 
         for(int col=0;col<n;col++)
         {
-            board[row][col]='Q';
-            if(checkValid(row,col,board)) solveNQueens(row+1,board,result);
-            board[row][col]='.';
+            board[row][col]='Q'; //first queen place chesey
+            if(checkValid(row,col,board)) solveNQueens(row+1,board,result); // check chesthadhi (if true it will try to place queen in the next row)
+            board[row][col]='.'; // (it will reset if the queen cannot be placed) or (it will reset after all the queens are placed while returning from the function) 
         }
     }
 
