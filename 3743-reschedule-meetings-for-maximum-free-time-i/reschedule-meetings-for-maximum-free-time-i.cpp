@@ -21,7 +21,6 @@ public:
             }
             maxFreeTime=max(sum,maxFreeTime); 
         }
-
         return maxFreeTime;
     }
 };
