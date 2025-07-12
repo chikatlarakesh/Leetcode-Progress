@@ -26,10 +26,11 @@ public:
         {
             for(int j=0;j<colSize;j++)
             {
-                if(word[0]==board[i][j])
-                {
-                    if(wordSearch(i,j,n,board,word,0)) return true;
-                }
+                // if(word[0]==board[i][j])
+                // {
+                //     if(wordSearch(i,j,n,board,word,0)) return true;
+                // }
+                if(wordSearch(i,j,n,board,word,0)) return true;
             }
         }
         return false;
