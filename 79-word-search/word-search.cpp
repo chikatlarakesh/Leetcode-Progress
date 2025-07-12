@@ -1,6 +1,6 @@
 class Solution {
 public:
-    bool wordSearch(int row,int col,int n,vector<vector<char>>& board, string word,int currIndex)
+    bool wordSearch(int row,int col,int n,vector<vector<char>>& board, const string& word,int currIndex)
     {
         if(currIndex==n) return true;
         if(row==-1 || row==board.size() || col==-1 || col==board[0].size()) return false;
@@ -26,11 +26,10 @@ public:
         {
             for(int j=0;j<colSize;j++)
             {
-                // if(word[0]==board[i][j])
-                // {
-                //     if(wordSearch(i,j,n,board,word,0)) return true;
-                // }
-                if(wordSearch(i,j,n,board,word,0)) return true;
+                if(word[0]==board[i][j])
+                {
+                    if(wordSearch(i,j,n,board,word,0)) return true;
+                }
             }
         }
         return false;
