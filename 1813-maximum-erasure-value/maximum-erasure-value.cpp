@@ -17,7 +17,7 @@ public:
             sum+=nums[r];
             maxScore=max(maxScore,sum);
         }
-        maxScore=max(maxScore,sum);
+        //maxScore=max(maxScore,sum);
         return maxScore;
     }
 };
