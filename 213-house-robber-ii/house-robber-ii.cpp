@@ -19,31 +19,59 @@ public:
     //     return max(maximumAmount(n-2,0,nums,dp1),maximumAmount(n-1,1,nums,dp2));
     // }
 
+    int maximumAmount(vector<int>& nums) {
+        int n=nums.size();
+        if(n==1) return nums[0];
+        int prev1=nums[0];
+        int prev=max(nums[0],nums[1]);
+
+        for(int i=2;i<n;i++)
+        {
+            int take=prev1+nums[i];
+            int notTake=prev;
+            int curr=max(take,notTake);
+            prev1=prev;
+            prev=curr;
+        }
+        return prev;
+    }
 
     int rob(vector<int>& nums) {
         int n=nums.size();
         if(n==1) return nums[0];
-        vector<int> dp1(n,-1);
-        dp1[0]=nums[0];
-        vector<int> dp2(n,-1);
-        dp2[1]=nums[1];
-
-        for(int i=1;i<=n-2;i++)
+        vector<int> temp,temp1;
+        for(int i=0;i<n;i++)
         {
-            int take=nums[i];
-            if(i>1) take+=dp1[i-2];
-            int notTake=dp1[i-1];
-            dp1[i]=max(take,notTake);
+            if(i!=0) temp.push_back(nums[i]);
+            if(i!=n-1) temp1.push_back(nums[i]);
         }
-
-        for(int i=2;i<=n-1;i++)
-        {
-            int take=nums[i];
-            if(i>2) take+=dp2[i-2];
-            int notTake=dp2[i-1];
-            dp2[i]=max(take,notTake);
-        }
-
-        return max(dp1[n-2],dp2[n-1]);
+        return max(maximumAmount(temp),maximumAmount(temp1));
     }
+
+    // int rob(vector<int>& nums) {
+    //     int n=nums.size();
+    //     if(n==1) return nums[0];
+    //     vector<int> dp1(n,-1);
+    //     dp1[0]=nums[0];
+    //     vector<int> dp2(n,-1);
+    //     dp2[1]=nums[1];
+
+    //     for(int i=1;i<=n-2;i++)
+    //     {
+    //         int take=nums[i];
+    //         if(i>1) take+=dp1[i-2];
+    //         int notTake=dp1[i-1];
+    //         dp1[i]=max(take,notTake);
+    //     }
+
+    //     for(int i=2;i<=n-1;i++)
+    //     {
+    //         int take=nums[i];
+    //         if(i>2) take+=dp2[i-2];
+    //         int notTake=dp2[i-1];
+    //         dp2[i]=max(take,notTake);
+    //     }
+
+    //     return max(dp1[n-2],dp2[n-1]);
+    // }
 };
