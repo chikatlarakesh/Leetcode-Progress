@@ -20,19 +20,14 @@ public:
         {
             for(int j=0;j<m;j++)
             {
-                if(i==0 && j==0)
+                if(i==0 && j==0) dp[i][j]=grid[i][j];
+                else
                 {
-                    dp[i][j]=grid[i][j];
-                    continue;
+                    int top=1e9,left=1e9;
+                    if(i>0) top=grid[i][j]+dp[i-1][j];
+                    if(j>0) left=grid[i][j]+dp[i][j-1];
+                    dp[i][j]=min(top,left);
                 }
-
-                int top=1e9,left=1e9;
-
-                if(i>0) top=grid[i][j]+dp[i-1][j];
-
-                if(j>0) left=grid[i][j]+dp[i][j-1];
-
-                dp[i][j]=min(top,left);
             }
         }
         return dp[n-1][m-1];
