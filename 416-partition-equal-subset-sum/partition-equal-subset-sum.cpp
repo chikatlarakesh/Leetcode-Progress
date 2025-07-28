@@ -22,6 +22,31 @@ public:
     //     return partitionArray(n-1,totalSum/2,nums,dp);
     // }
 
+    // bool canPartition(vector<int>& nums) {
+    //     int n=nums.size();
+    //     int totalSum=0;
+    //     for(int num:nums) totalSum+=num;
+    //     if(totalSum%2==1) return false;
+
+    //     int size=max(nums[0],(totalSum/2)+1);
+    //     vector<vector<bool>> dp(n,vector<bool>(size+1,false));
+        
+    //     for(int i=0;i<n;i++) dp[i][0]=true;
+    //     dp[0][nums[0]]=true;
+
+    //     for(int i=1;i<n;i++)
+    //     {
+    //         for(int currSum=1;currSum<=(totalSum/2);currSum++)
+    //         {
+    //             bool take=false;
+    //             if(currSum>=nums[i]) take=dp[i-1][currSum-nums[i]];
+    //             bool notTake=dp[i-1][currSum];
+    //             dp[i][currSum]=(take || notTake);
+    //         }
+    //     }
+    //     return dp[n-1][(totalSum/2)];
+    // }
+
     bool canPartition(vector<int>& nums) {
         int n=nums.size();
         int totalSum=0;
@@ -29,21 +54,23 @@ public:
         if(totalSum%2==1) return false;
 
         int size=max(nums[0],(totalSum/2)+1);
-        vector<vector<bool>> dp(n,vector<bool>(size+1,false));
+        vector<bool> prev(size+1,0);
+        vector<bool> curr(size+1,0);
         
-        for(int i=0;i<n;i++) dp[i][0]=true;
-        dp[0][nums[0]]=true;
+        for(int i=0;i<n;i++) prev[0]=true;
+        prev[nums[0]]=true;
 
         for(int i=1;i<n;i++)
         {
             for(int currSum=1;currSum<=(totalSum/2);currSum++)
             {
                 bool take=false;
-                if(currSum>=nums[i]) take=dp[i-1][currSum-nums[i]];
-                bool notTake=dp[i-1][currSum];
-                dp[i][currSum]=(take || notTake);
+                if(currSum>=nums[i]) take=prev[currSum-nums[i]];
+                bool notTake=prev[currSum];
+                curr[currSum]=(take || notTake);
             }
+            prev=curr;
         }
-        return dp[n-1][(totalSum/2)];
+        return prev[(totalSum/2)];
     }
 };
