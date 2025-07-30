@@ -53,11 +53,37 @@ public:
     // }
 
     // SPACE OPTIMIZATION
+    // int change(int amount, vector<int>& coins) {
+    //     if(amount==0) return 1;
+    //     int n=coins.size();
+    //     vector<long long> prev(amount+1,0);
+    //     vector<long long> curr(amount+1,0);
+        
+    //     for(int i=0;i<n;i++)
+    //     {
+    //         for(int j=0;j<=amount;j++)
+    //         {
+    //             if(i==0)
+    //             {
+    //                 if(j==0 || j%coins[i]==0) curr[j]=1;
+    //             }
+    //             else
+    //             {
+    //                 int take=0;
+    //                 if(j>=coins[i]) take=curr[j-coins[i]];
+    //                 int notTake=prev[j];
+    //                 curr[j]=(long long)take+notTake;
+    //             }
+    //         }
+    //         prev=curr;
+    //     }
+    //     return (int)prev[amount];
+    // }
+
     int change(int amount, vector<int>& coins) {
         if(amount==0) return 1;
         int n=coins.size();
         vector<long long> prev(amount+1,0);
-        vector<long long> curr(amount+1,0);
         
         for(int i=0;i<n;i++)
         {
@@ -65,17 +91,16 @@ public:
             {
                 if(i==0)
                 {
-                    if(j==0 || j%coins[i]==0) curr[j]=1;
+                    if(j==0 || j%coins[i]==0) prev[j]=1;
                 }
                 else
                 {
                     int take=0;
-                    if(j>=coins[i]) take=curr[j-coins[i]];
+                    if(j>=coins[i]) take=prev[j-coins[i]];
                     int notTake=prev[j];
-                    curr[j]=(long long)take+notTake;
+                    prev[j]=(long long)take+notTake;
                 }
             }
-            prev=curr;
         }
         return (int)prev[amount];
     }
