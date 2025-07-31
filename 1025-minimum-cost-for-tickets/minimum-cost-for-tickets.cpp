@@ -28,7 +28,31 @@ public:
 
     int mincostTickets(vector<int>& days, vector<int>& costs) {
         int n=days.size();
-        vector<int> dp(n,-1);
-        return minCost(0,days,costs,dp);
+        vector<int> dp(n+1,0);
+        //return minCost(0,days,costs,dp);
+
+        for(int i=n-1;i>=0;i--)
+        {
+            if(i==n-1) dp[i]=min({costs[0],costs[1],costs[2]});
+            else
+            {
+                int oneDay=costs[0]+dp[i+1];
+                int ending7Day=days[i]+7;
+                int j=0;
+                for(j=i;j<days.size();j++)
+                {
+                    if(days[j]>=ending7Day) break;
+                }
+                int sevenDay=costs[1]+dp[j];
+                int ending30Day=days[i]+30;
+                for(j=i;j<days.size();j++)
+                {
+                    if(days[j]>=ending30Day) break;
+                }
+                int thirtyDay=costs[2]+dp[j];
+                dp[i]=min({oneDay,sevenDay,thirtyDay});
+            }
+        }
+        return dp[0];
     }
 };
