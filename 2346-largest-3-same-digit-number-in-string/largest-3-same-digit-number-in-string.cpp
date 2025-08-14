@@ -7,7 +7,7 @@ public:
         {
             if(num[i]==num[i+1] && num[i+1]==num[i+2])
             {
-                string temp=string(3,num[i]);
+                string temp(3,num[i]);
                 ans=max(ans,temp);
             } 
         }
