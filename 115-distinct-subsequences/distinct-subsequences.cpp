@@ -1,5 +1,6 @@
 class Solution {
 public:
+    // MEMOIZATION
     // int distinctSubsequences(int i,int j,string s,string t,vector<vector<int>>& dp)
     // {
     //     if(j<0) return 1;
@@ -12,6 +13,7 @@ public:
     //     return dp[i][j]=max(take,notTake);
     // }
 
+    // TABULATION
     // int numDistinct(string s, string t) {
     //     int n=s.length();
     //     int m=t.length();
@@ -37,23 +39,42 @@ public:
     //     return (int)dp[n][m];
     // }
 
+
+    // SPACE OPTIMIZATION
+    // int numDistinct(string s, string t) {
+    //     int n=s.length();
+    //     int m=t.length();
+
+    //     vector<double> prev(m+1,0),curr(m+1,0);
+    //     prev[0]=1;
+    //     curr[0]=1;
+
+    //     for(int i=1;i<=n;i++)
+    //     {
+    //         for(int j=1;j<=m;j++)
+    //         {
+    //             if(s[i-1]==t[j-1]) curr[j]=prev[j-1]+prev[j];
+    //             else curr[j]=prev[j];
+    //         }
+    //         prev=curr;
+    //     }
+    //     return (int)curr[m];
+    // }
+
     int numDistinct(string s, string t) {
         int n=s.length();
         int m=t.length();
 
-        vector<double> prev(m+1,0),curr(m+1,0);
+        vector<double> prev(m+1,0);
         prev[0]=1;
-        curr[0]=1;
 
         for(int i=1;i<=n;i++)
         {
-            for(int j=1;j<=m;j++)
+            for(int j=m;j>=1;j--)
             {
-                if(s[i-1]==t[j-1]) curr[j]=prev[j-1]+prev[j];
-                else curr[j]=prev[j];
+                if(s[i-1]==t[j-1]) prev[j]=prev[j-1]+prev[j];
             }
-            prev=curr;
         }
-        return (int)curr[m];
+        return (int)prev[m];
     }
 };
