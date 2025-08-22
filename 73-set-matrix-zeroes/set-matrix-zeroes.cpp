@@ -33,7 +33,7 @@ public:
 
         if(matrix[0][0]==0)
         {
-            for(int j=0;j<m;j++) matrix[0][j]=0;
+            for(int j=1;j<m;j++) matrix[0][j]=0;
         }
         if(col0==0)
         {
