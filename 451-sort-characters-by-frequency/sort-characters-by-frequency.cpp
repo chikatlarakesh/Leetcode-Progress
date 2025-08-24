@@ -1,50 +1,30 @@
 class Solution {
 public:
-    string frequencySort(string s) {
-        unordered_map<char,int> mp;
-        for(char ch: s) mp[ch]++;
-        priority_queue<pair<int,char>> pq;
-        for(auto &it: mp)
+    class comparer{
+        public:
+        bool operator()(pair<char,int>& a,pair<char,int>& b)
         {
-            pq.push({it.second,it.first});
+            return a.second>b.second;
         }
+    };
 
-        string ans="";
-        while(!pq.empty())
+    string frequencySort(string s) {
+        int n=s.length();
+        vector<pair<char,int>> frequency(123);
+        for(char ch:s)
         {
-            int freq=pq.top().first;
-            char ch=pq.top().second;
-            pq.pop();
-            while(freq--) ans+=ch;
+            int freq=frequency[ch].second;
+            frequency[ch]={ch,freq+1};
+        }
+        sort(frequency.begin(),frequency.end(),comparer());
+        string ans="";
+        for(int i=0;i<123;i++)
+        {
+            if(frequency[i].second==0) break;
+            char ch=frequency[i].first;
+            int freq=frequency[i].second;
+            ans+=string(freq,ch);
         }
         return ans;
     }
 };
-
-// class Solution {
-// public:
-//     string frequencySort(string s) {
-//         int n=s.length();
-//         pair<int,char> freq(26,0);
-//         for(int i=0;i<26;i++)
-//         {
-//             freq[i]={0,i+'a'};
-//         }
-
-//         for(char ch:s)
-//         {
-//             freq[ch-'a'].first++;
-//         }
-//         sort(freq.begin(),freq.end());
-
-//         string ans="";
-//         for(auto &it: freq)
-//         {
-//             int freq=it.first;
-//             char ch=it.second;
-//             if(freq==0) break;
-//             while(freq--) ans+=ch;
-//         }
-//         return ans;
-//     }
-// };
