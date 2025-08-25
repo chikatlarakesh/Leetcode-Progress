@@ -1,5 +1,40 @@
 class Solution {
 public:
+    int combinations(int i,int amount,vector<int>& nums,vector<vector<int>>& dp)
+    {
+        if(amount==0) return 1;
+        if(i==0)
+        {
+            if(amount%nums[i]==0) return 1;
+            return 0;
+        }
+        if(dp[i][amount]!=-1) return dp[i][amount];
+
+        int take=0,notTake=0;
+        if(amount>=nums[i]) take=combinations(i,amount-nums[i],nums,dp);
+        notTake=combinations(i-1,amount,nums,dp);
+        return dp[i][amount]=take+notTake;
+    }
+
+
+    int change(int amount, vector<int>& coins) {
+        if(amount==0) return 1;
+        int n=coins.size();
+        vector<vector<int>> dp(n,vector<int>(amount+1,-1));
+        return combinations(n-1,amount,coins,dp);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 
     // MEMOIZATION
     // int coinChange(int i,int amount,vector<int>& coins,vector<vector<int>>& dp)
@@ -52,7 +87,7 @@ public:
     //     return (int)dp[n-1][amount];
     // }
 
-    // SPACE OPTIMIZATION
+    // 2-D ARRAY SPACE OPTIMIZATION
     // int change(int amount, vector<int>& coins) {
     //     if(amount==0) return 1;
     //     int n=coins.size();
@@ -80,28 +115,29 @@ public:
     //     return (int)prev[amount];
     // }
 
-    int change(int amount, vector<int>& coins) {
-        if(amount==0) return 1;
-        int n=coins.size();
-        vector<long long> prev(amount+1,0);
+    // 1-D ARRAY SPACE OPTIMIZED
+    // int change(int amount, vector<int>& coins) {
+    //     if(amount==0) return 1;
+    //     int n=coins.size();
+    //     vector<long long> prev(amount+1,0);
         
-        for(int i=0;i<n;i++)
-        {
-            for(int j=0;j<=amount;j++)
-            {
-                if(i==0)
-                {
-                    if(j==0 || j%coins[i]==0) prev[j]=1;
-                }
-                else
-                {
-                    int take=0;
-                    if(j>=coins[i]) take=prev[j-coins[i]];
-                    int notTake=prev[j];
-                    prev[j]=(long long)take+notTake;
-                }
-            }
-        }
-        return (int)prev[amount];
-    }
+    //     for(int i=0;i<n;i++)
+    //     {
+    //         for(int j=0;j<=amount;j++)
+    //         {
+    //             if(i==0)
+    //             {
+    //                 if(j==0 || j%coins[i]==0) prev[j]=1;
+    //             }
+    //             else
+    //             {
+    //                 int take=0;
+    //                 if(j>=coins[i]) take=prev[j-coins[i]];
+    //                 int notTake=prev[j];
+    //                 prev[j]=(long long)take+notTake;
+    //             }
+    //         }
+    //     }
+    //     return (int)prev[amount];
+    //}
 };
