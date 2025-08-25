@@ -1,23 +1,24 @@
 class Solution {
 public:
-    void possCombinations(int i,int n,vector<int>& vec,int target,vector<int>& arr,vector<vector<int>>& result)
+    void uniqueCombinations(int i,int target,vector<int>& vec,vector<vector<int>>& result,vector<int>& nums)
     {
-        if(target<=0 || i==n)
+        if(target<=0 || i==nums.size())
         {
-            if(target==0) result.push_back(arr);
+            if(target==0) result.push_back(vec);
             return;
         }
-        arr.push_back(vec[i]);
-        possCombinations(i,n,vec,target-vec[i],arr,result);
-        arr.pop_back();
-        possCombinations(i+1,n,vec,target,arr,result);
+
+        vec.push_back(nums[i]);
+        uniqueCombinations(i,target-nums[i],vec,result,nums);
+        vec.pop_back();
+        uniqueCombinations(i+1,target,vec,result,nums);
     }
 
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
         int n=candidates.size();
+        vector<int> vec;
         vector<vector<int>> result;
-        vector<int> arr;
-        possCombinations(0,n,candidates,target,arr,result);
+        uniqueCombinations(0,target,vec,result,candidates);
         return result;
     }
 };
