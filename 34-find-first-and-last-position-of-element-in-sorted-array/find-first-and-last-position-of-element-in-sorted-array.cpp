@@ -26,6 +26,7 @@ public:
         int n=nums.size();
         vector<int> ans(2,-1);
         findFirstOccurence(0,n-1,nums,target,ans);
+        if(ans[0]==-1) return ans; // Return -1,-1 if no first occurence as last occurence will not be there.
         findLastOccurence(0,n-1,nums,target,ans);
         return ans;
     }
