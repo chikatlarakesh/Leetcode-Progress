@@ -6,24 +6,18 @@ public:
         if(j<0) return false;
         if(i<0)
         {
-            int k=j;
-            while(k>=0)
+            while(j>=0)
             {
-                if(p[k]!='*') return false;
-                k--;
+                if(p[j]!='*') return false;
+                j--;
             }
             return true;
         }
         if(dp[i][j]!=-1) return dp[i][j];
 
         bool match=false, notMatch=false;
-        if(s[i]==p[j]) match=wildcardMatching(i-1,j-1,s,p,dp);
-        else
-        {
-            if(p[j]=='?') notMatch=wildcardMatching(i-1,j-1,s,p,dp);
-            else if(p[j]=='*') notMatch= (wildcardMatching(i,j-1,s,p,dp) || wildcardMatching(i-1,j-1,s,p,dp) || wildcardMatching(i-1,j,s,p,dp));
-            else return false;
-        }
+        if(s[i]==p[j] || p[j]=='?') match=wildcardMatching(i-1,j-1,s,p,dp);
+        if(p[j]=='*') notMatch= (wildcardMatching(i,j-1,s,p,dp) || wildcardMatching(i-1,j,s,p,dp));
 
         return dp[i][j]=(match || notMatch);
     }
