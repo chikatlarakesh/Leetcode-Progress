@@ -1,20 +1,80 @@
 class Solution {
 public:
-    int maxLength(int i,int prevInd,vector<int>& nums,vector<vector<int>>& dp)
-    {
-        if(i<0) return 0;
-        if(dp[i][prevInd]!=-1) return dp[i][prevInd];
+    // MEMOIZATION
+    //   int maxLength(int i,int prevInd,vector<int>& nums,vector<vector<int>>& dp)
+    //     {
+    //         if(i==0)
+    //         {
+    //             if(prevInd==nums.size() || nums[i]<nums[prevInd]) return 1;
+    //             return 0;
+    //         }
+    //         if(dp[i][prevInd]!=-1) return dp[i][prevInd];
+    
+    //         int take=0,notTake=0;
+    //         if(prevInd==nums.size() || nums[i]<nums[prevInd]) take= 1+maxLength(i-1,i,nums,dp);
+    //         notTake= maxLength(i-1,prevInd,nums,dp);
+    
+    //         return dp[i][prevInd]=max(take,notTake);
+    //     }
 
-        int take=0,notTake=0;
-        if(prevInd==nums.size() || nums[i]<nums[prevInd]) take= 1+maxLength(i-1,i,nums,dp);
-        notTake= maxLength(i-1,prevInd,nums,dp);
+    // int lengthOfLIS(vector<int>& nums) {
+    //     int n=nums.size();
+    //     vector<vector<int>> dp(n,vector<int>(n+1,-1));
+    //     return maxLength(n-1,n,nums,dp);
+    // }
 
-        return dp[i][prevInd]=max(take,notTake);
-    }
+    // TABULATION
+    // int lengthOfLIS(vector<int>& nums) {
+    //     int n=nums.size();
+    //     vector<vector<int>> dp(n,vector<int>(n+1,-1));
+        
+    //     for(int i=0;i<n;i++)
+    //     {
+    //         for(int prevInd=n;prevInd>=i;prevInd--)
+    //         {
+    //             if(i==0)
+    //             {
+    //                 if(prevInd==nums.size() || nums[i]<nums[prevInd]) dp[i][prevInd]= 1;
+    //                 else dp[i][prevInd]= 0;
+    //             }
+    //             else
+    //             {
+    //                 int take=0,notTake=0;
+    //                 if(prevInd==nums.size() || nums[i]<nums[prevInd]) take= 1+dp[i-1][i];
+    //                 notTake= dp[i-1][prevInd];
+            
+    //                 dp[i][prevInd]=max(take,notTake);
+    //             }
+    //         }
+    //     }
+    //     return dp[n-1][n];
+    // }
 
+     // 2-D ARRAY SPACE OPTIMIZATION
     int lengthOfLIS(vector<int>& nums) {
         int n=nums.size();
-        vector<vector<int>> dp(n,vector<int>(n+1,-1));
-        return maxLength(n-1,n,nums,dp);
+        vector<int> prev(n+1,-1),curr(n+1,-1);
+        
+        for(int i=0;i<n;i++)
+        {
+            for(int prevInd=n;prevInd>=i;prevInd--)
+            {
+                if(i==0)
+                {
+                    if(prevInd==nums.size() || nums[i]<nums[prevInd]) curr[prevInd]= 1;
+                    else curr[prevInd]= 0;
+                }
+                else
+                {
+                    int take=0,notTake=0;
+                    if(prevInd==nums.size() || nums[i]<nums[prevInd]) take= 1+prev[i];
+                    notTake= prev[prevInd];
+            
+                    curr[prevInd]=max(take,notTake);
+                }
+            }
+            prev=curr;
+        }
+        return prev[n];
     }
 };
