@@ -15,11 +15,10 @@ public:
         }
         if(dp[i][j]!=-1) return dp[i][j];
 
-        bool match=false, notMatch=false;
-        if(s[i]==p[j] || p[j]=='?') match=wildcardMatching(i-1,j-1,s,p,dp);
-        if(p[j]=='*') notMatch= (wildcardMatching(i,j-1,s,p,dp) || wildcardMatching(i-1,j,s,p,dp));
+        if(s[i]==p[j] || p[j]=='?') return dp[i][j]= wildcardMatching(i-1,j-1,s,p,dp);
+        if(p[j]=='*') return dp[i][j]= (wildcardMatching(i,j-1,s,p,dp) || wildcardMatching(i-1,j,s,p,dp));
 
-        return dp[i][j]=(match || notMatch);
+        return dp[i][j]= false;
     }
 
     bool isMatch(string s, string p) {
