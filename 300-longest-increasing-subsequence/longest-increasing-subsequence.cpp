@@ -107,22 +107,39 @@ public:
     // }
 
     // MOST OPTIMAL BUT DIFFERENT TABULATION
+    // int lengthOfLIS(vector<int>& nums) {
+    //     int n=nums.size();
+    //     vector<int> dp(n,1);
+        
+    //     int maxi=1;
+    //     for(int i=0;i<n;i++)
+    //     {
+    //         for(int prevInd=0;prevInd<i;prevInd++)
+    //         {
+    //             if(nums[prevInd]<nums[i])
+    //             {
+    //                 dp[i]=max(1+dp[prevInd],dp[i]);
+    //             }
+    //         }
+    //         maxi=max(maxi,dp[i]);
+    //     }
+    //     return maxi;
+    // }
+
     int lengthOfLIS(vector<int>& nums) {
         int n=nums.size();
-        vector<int> dp(n,1);
+        vector<int> result;
+        result.push_back(nums[0]);
         
-        int maxi=1;
-        for(int i=0;i<n;i++)
+        for(int i=1;i<n;i++)
         {
-            for(int prevInd=0;prevInd<i;prevInd++)
+            if(nums[i]>result.back()) result.push_back(nums[i]);
+            else
             {
-                if(nums[prevInd]<nums[i])
-                {
-                    dp[i]=max(1+dp[prevInd],dp[i]);
-                }
+                int ind = lower_bound(result.begin(),result.end(),nums[i]) - result.begin();
+                result[ind]=nums[i];
             }
-            maxi=max(maxi,dp[i]);
         }
-        return maxi;
+        return result.size();
     }
 };
