@@ -11,19 +11,17 @@
  */
 class Solution {
 public:
-    TreeNode* constructBT(vector<int>& preorder,int preStart,int preEnd, vector<int>& inorder,int inStart,int inEnd,unordered_map<int,int>& inorderMap)
+    TreeNode* constructBT(vector<int>& preorder,int preStart,int preEnd, vector<int>& inorder,int inStart,int inEnd, unordered_map<int,int>& inorderMap)
     {
         if(preStart>preEnd || inStart>inEnd) return NULL;
 
-        TreeNode* root=new TreeNode(preorder[preStart]);
-
+        TreeNode* root= new TreeNode(preorder[preStart]);
         int inorderRoot= inorderMap[root->val];
-        int numsLeft=inorderRoot-inStart;
+        int numsLeft= inorderRoot-inStart;
+        int numsRight= inEnd - inorderRoot;
 
-        root->left= constructBT(preorder,preStart+1,preStart+numsLeft,inorder,inStart,inorderRoot-1,inorderMap);
-
+        root->left = constructBT(preorder,preStart+1,preStart+numsLeft,inorder,inStart,inorderRoot-1,inorderMap);
         root->right= constructBT(preorder,preStart+numsLeft+1,preEnd,inorder,inorderRoot+1,inEnd,inorderMap);
-
         return root;
     }
 
