@@ -17,8 +17,7 @@ public:
         {
             if(root->right == NULL)
             {
-                TreeNode* newNode = new TreeNode(val);
-                root->right = newNode;
+                root->right = new TreeNode(val);;
                 return;
             }
             insertNode(root->right,val);
@@ -27,8 +26,7 @@ public:
         {
             if(root->left == NULL)
             {
-                TreeNode* newNode = new TreeNode(val);
-                root->left = newNode;
+                root->left = new TreeNode(val);
                 return;
             }
             insertNode(root->left,val);
@@ -36,11 +34,7 @@ public:
     }
 
     TreeNode* insertIntoBST(TreeNode* root, int val) {
-        if(root == NULL)
-        {
-            TreeNode* newNode = new TreeNode(val);
-            return newNode;
-        }
+        if(root == NULL) return new TreeNode(val);
         insertNode(root,val);
         return root;
     }
