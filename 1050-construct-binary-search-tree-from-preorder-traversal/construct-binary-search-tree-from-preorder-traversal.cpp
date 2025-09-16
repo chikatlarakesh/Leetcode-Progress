@@ -12,21 +12,48 @@
  */
 class Solution {
 public:
-    TreeNode* constructBST(vector<int>& preorder,int start,int end) {
-        if(start > end) return NULL;
+    TreeNode* constructBST(vector<int>& preorder,int& i,int bound)
+    {
+        if(i == preorder.size() || preorder[i] > bound) return NULL;
 
-        int lowerbound = lower_bound(preorder.begin()+start+1,preorder.begin()+end+1,preorder[start]) - preorder.begin();
-        TreeNode* root = new TreeNode(preorder[start]);
-
-        root->left = constructBST(preorder,start+1,lowerbound-1);
-        root->right = constructBST(preorder,lowerbound,end);
+        TreeNode* root = new TreeNode(preorder[i++]);
+        root->left = constructBST(preorder,i,root->val);
+        root->right = constructBST(preorder,i,bound);
         return root;
     }
 
     TreeNode* bstFromPreorder(vector<int>& preorder) {
-        int n = preorder.size();
-        return constructBST(preorder,0,n-1);
+        int i = 0;
+        return constructBST(preorder,i,INT_MAX);
     }
+
+
+
+
+
+
+    // TreeNode* constructBST(vector<int>& preorder,int start,int end) {
+    //     if(start > end) return NULL;
+
+    //     int lowerbound = lower_bound(preorder.begin()+start+1,preorder.begin()+end+1,preorder[start]) - preorder.begin();
+    //     TreeNode* root = new TreeNode(preorder[start]);
+
+    //     root->left = constructBST(preorder,start+1,lowerbound-1);
+    //     root->right = constructBST(preorder,lowerbound,end);
+    //     return root;
+    // }
+
+    // TreeNode* bstFromPreorder(vector<int>& preorder) {
+    //     int n = preorder.size();
+    //     return constructBST(preorder,0,n-1);
+    // }
+
+
+
+
+
+
+
 
     // TreeNode* constructBST(vector<int>& preorder,int preStart,int preEnd,vector<int>& inorder,int inStart,int inEnd,unordered_map<int,int>& inorderMap) {
     //     if(preStart > preEnd || inStart > inEnd) return NULL;
