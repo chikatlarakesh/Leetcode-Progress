@@ -26,7 +26,8 @@ public:
     }
     
     string highestRated(string cuisine) {
-        return begin(cuisineRatingFood[cuisine])->second;
+        auto it = cuisineRatingFood[cuisine].begin();
+        return it->second;
     }
 };
 
