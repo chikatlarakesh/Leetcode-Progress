@@ -19,9 +19,6 @@ public:
             if(board[0][j] == 'O') {
                 dfs(0,j,board);
             }
-        }
-
-        for(int j=0;j<m;j++) {
             if(board[n-1][j] == 'O') {
                 dfs(n-1,j,board);
             }
