@@ -1,9 +1,10 @@
 class Solution {
 public:
     int minimumEffortPath(vector<vector<int>>& heights) {
-        priority_queue<pair<pair<int,int>,int>,vector<pair<pair<int,int>,int>>,greater<pair<pair<int,int>,int>>> pq;
         int n = heights.size();
         int m = heights[0].size();
+        using node = pair<pair<int,int>,int>;
+        priority_queue<node,vector<node>,greater<node>> pq;
         vector<vector<int>> effort(n,vector<int>(m,INT_MAX));
 
         pq.push({{0,0},0});
@@ -14,6 +15,8 @@ public:
             int col = pq.top().first.second;
             int currEffort = pq.top().second;
             pq.pop();
+            if(row == n-1 && col == m-1) return currEffort;
+            if(currEffort > effort[row][col]) continue;
 
             for(auto &[r,c]: dir) {
                 int i = row + r;
