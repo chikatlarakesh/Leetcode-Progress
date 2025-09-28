@@ -4,7 +4,7 @@ public:
         int n=nums.size();
         int a,b,c;
         int largestPerm=0;
-        sort(nums.begin(),nums.end(),greater<int>());
+        sort(nums.begin(),nums.end());
         for(int i=0;i<n-2;i++)
         {
             a=nums[i];
