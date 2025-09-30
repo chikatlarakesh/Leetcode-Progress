@@ -1,7 +1,10 @@
 class Solution {
 public:
     int maxLength(int i,int prevInd,vector<int>& nums,vector<vector<int>>& dp) {
-        if(i<0) return 0;
+        if(i == 0) {
+            if(prevInd == nums.size() || nums[i] < nums[prevInd]) return 1;
+            return 0;
+        }
         if(dp[i][prevInd] != -1) return dp[i][prevInd];
 
         int take = 0;
@@ -12,9 +15,26 @@ public:
 
     int lengthOfLIS(vector<int>& nums) {
         int n=nums.size();
-        vector<vector<int>> dp(n,vector<int>(n+1,-1));
-        return maxLength(n-1,n,nums,dp);
+        vector<vector<int>> dp(n,vector<int>(n+1,0));
+        
+        for(int i=0;i<n;i++) {
+            for(int prevInd = n;prevInd>=i;prevInd--) {
+                if(i == 0) {
+                    if(prevInd == nums.size() || nums[i] < nums[prevInd]) dp[i][prevInd] = 1;
+                }
+                else {
+                    int take = 0;
+                    if(prevInd == nums.size() || nums[i] < nums[prevInd]) take = 1 + dp[i-1][i];
+                    int notTake = dp[i-1][prevInd];
+                    dp[i][prevInd] = max(take,notTake);
+                }
+            }
+        }
+        return dp[n-1][n];
     }
+
+
+
 
     // TABULATION
     // int lengthOfLIS(vector<int>& nums) {
