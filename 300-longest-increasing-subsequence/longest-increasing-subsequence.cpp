@@ -1,27 +1,20 @@
 class Solution {
 public:
-    // MEMOIZATION
-    //   int maxLength(int i,int prevInd,vector<int>& nums,vector<vector<int>>& dp)
-    //     {
-    //         if(i==0)
-    //         {
-    //             if(prevInd==nums.size() || nums[i]<nums[prevInd]) return 1;
-    //             return 0;
-    //         }
-    //         if(dp[i][prevInd]!=-1) return dp[i][prevInd];
-    
-    //         int take=0,notTake=0;
-    //         if(prevInd==nums.size() || nums[i]<nums[prevInd]) take= 1+maxLength(i-1,i,nums,dp);
-    //         notTake= maxLength(i-1,prevInd,nums,dp);
-    
-    //         return dp[i][prevInd]=max(take,notTake);
-    //     }
+    int maxLength(int i,int prevInd,vector<int>& nums,vector<vector<int>>& dp) {
+        if(i<0) return 0;
+        if(dp[i][prevInd] != -1) return dp[i][prevInd];
 
-    // int lengthOfLIS(vector<int>& nums) {
-    //     int n=nums.size();
-    //     vector<vector<int>> dp(n,vector<int>(n+1,-1));
-    //     return maxLength(n-1,n,nums,dp);
-    // }
+        int take = 0;
+        if(prevInd == nums.size() || nums[i] < nums[prevInd]) take = 1 + maxLength(i-1,i,nums,dp);
+        int notTake = maxLength(i-1,prevInd,nums,dp);
+        return dp[i][prevInd] = max(take,notTake);
+    }
+
+    int lengthOfLIS(vector<int>& nums) {
+        int n=nums.size();
+        vector<vector<int>> dp(n,vector<int>(n+1,-1));
+        return maxLength(n-1,n,nums,dp);
+    }
 
     // TABULATION
     // int lengthOfLIS(vector<int>& nums) {
@@ -106,7 +99,7 @@ public:
     //     return prev[n];
     // }
 
-    // MOST OPTIMAL BUT DIFFERENT TABULATION
+    // STANDARD TABULATION USED EVERYWHERE 
     // int lengthOfLIS(vector<int>& nums) {
     //     int n=nums.size();
     //     vector<int> dp(n,1);
@@ -126,20 +119,22 @@ public:
     //     return maxi;
     // }
 
-    int lengthOfLIS(vector<int>& nums) {
-        int n=nums.size();
-        vector<int> result;
-        result.push_back(nums[0]);
+
+    // PATIENCE SORTING ALGORITHM TAKES O(n log n) approach
+    // int lengthOfLIS(vector<int>& nums) {
+    //     int n=nums.size();
+    //     vector<int> result;
+    //     result.push_back(nums[0]);
         
-        for(int i=1;i<n;i++)
-        {
-            if(nums[i]>result.back()) result.push_back(nums[i]);
-            else
-            {
-                int ind = lower_bound(result.begin(),result.end(),nums[i]) - result.begin();
-                result[ind]=nums[i];
-            }
-        }
-        return result.size();
-    }
+    //     for(int i=1;i<n;i++)
+    //     {
+    //         if(nums[i]>result.back()) result.push_back(nums[i]);
+    //         else
+    //         {
+    //             int ind = lower_bound(result.begin(),result.end(),nums[i]) - result.begin();
+    //             result[ind]=nums[i];
+    //         }
+    //     }
+    //     return result.size();
+    // }
 };
