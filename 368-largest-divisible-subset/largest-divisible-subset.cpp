@@ -1,10 +1,5 @@
 class Solution {
 public:
-
-    bool checkValid(int i,int j,vector<int>& nums) {
-        return (nums[i] % nums[j] == 0) || (nums[j] % nums[i] == 0);
-    }
-
     vector<int> largestDivisibleSubset(vector<int>& nums) {
         int n = nums.size();
         if(n == 1) return nums;
@@ -15,7 +10,7 @@ public:
         for(int i=1;i<n;i++) {
             hash[i] = i;
             for(int prevInd = 0;prevInd < i;prevInd++) {
-                if(checkValid(i,prevInd,nums) && dp[prevInd] + 1 > dp[i]) {
+                if(nums[i] % nums[prevInd] == 0 && dp[prevInd] + 1 > dp[i]) {
                     dp[i] = dp[prevInd] + 1;
                     hash[i] = prevInd;
                 }
