@@ -2,7 +2,7 @@ class Solution {
 public:
     class comparer {
         public:
-        bool operator()(const string& a,const string& b) {
+        bool operator()(const string& a,const string& b) const {
             if(a.length() != b.length()) {
                 return a.length() < b.length();
             }
