@@ -1,53 +1,50 @@
 class Solution {
-    const int dx[4] = {-1, 0, 1, 0};
-    const int dy[4] = {0, 1, 0, -1};
 public:
     int trapRainWater(vector<vector<int>>& heightMap) {
-        if (heightMap.empty() || heightMap[0].empty()) return 0;
-        
-        const int m = heightMap.size();
-        const int n = heightMap[0].size();
-        
-        priority_queue<pair<int, pair<int, int>>, 
-                      vector<pair<int, pair<int, int>>>, 
-                      greater<>> pq;
-                      
-        vector<vector<bool>> visited(m, vector<bool>(n, false));
-        
-        for (int j = 0; j < n; j++) {
-            pq.push({heightMap[0][j], {0, j}});
-            pq.push({heightMap[m-1][j], {m-1, j}});
-            visited[0][j] = visited[m-1][j] = true;
-        }
-        
-        for (int i = 1; i < m-1; i++) {
-            pq.push({heightMap[i][0], {i, 0}});
-            pq.push({heightMap[i][n-1], {i, n-1}});
-            visited[i][0] = visited[i][n-1] = true;
-        }
-        
-        int water = 0;
-        while (!pq.empty()) {
-            auto [height, coords] = pq.top();
-            auto [row, col] = coords;
-            pq.pop();
-            
-            for (int k = 0; k < 4; k++) {
-                int newRow = row + dx[k];
-                int newCol = col + dy[k];
-                
-                if (newRow < 0 || newRow >= m || newCol < 0 || newCol >= n || 
-                    visited[newRow][newCol]) continue;
-                
-                if (heightMap[newRow][newCol] < height) {
-                    water += height - heightMap[newRow][newCol];
-                    pq.push({height, {newRow, newCol}});
-                } else {
-                    pq.push({heightMap[newRow][newCol], {newRow, newCol}});
-                }
-                visited[newRow][newCol] = true;
+        int n = heightMap.size();
+        int m = heightMap[0].size();
+        vector<vector<int>> visited(n,vector<int>(m,0));
+        using Node = pair<int,pair<int,int>>;
+        priority_queue<Node,vector<Node>,greater<Node>> pq;
+
+        for(int col=0;col<m;col++) {
+            for(int row: {0,n-1}) {
+                pq.push({heightMap[row][col],{row,col}});
+                visited[row][col] = 1;
             }
         }
-        return water;
+
+        for(int row=1;row<n-1;row++) {
+            for(int col: {0,m-1}) {
+                pq.push({heightMap[row][col],{row,col}});
+                visited[row][col] = 1;
+            }
+        }
+
+        int totalVolume = 0;
+        vector<pair<int,int>> dir = {{0, 1},{1, 0},{0, -1},{-1, 0}};
+        while(!pq.empty()) {
+            int height = pq.top().first;
+            int row = pq.top().second.first;
+            int col = pq.top().second.second;
+            pq.pop();
+
+            for(auto &[r,c]: dir) {
+                int i = row + r;
+                int j = col + c;
+
+                if(i>=0 && i<n && j>=0 && j<m && !visited[i][j]) {
+                    if(heightMap[i][j] < height) {
+                        totalVolume += height - heightMap[i][j];
+                        pq.push({height,{i,j}});
+                    }
+                    else {
+                        pq.push({heightMap[i][j],{i,j}});
+                    }
+                    visited[i][j] = 1;
+                }
+            }
+        }
+        return totalVolume;
     }
 };
