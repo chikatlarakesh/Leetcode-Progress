@@ -2,12 +2,13 @@ class Solution {
 public:
     int swimInWater(vector<vector<int>>& grid) {
         int n = grid.size();
-        vector<vector<int>> dist(n,vector<int>(n,INT_MAX));
-        using Node = pair<int,pair<int,int>>;
+        using Node = pair<int,pair<int,int>> ;
         priority_queue<Node,vector<Node>,greater<Node>> pq;
+        vector<vector<int>> visited(n,vector<int>(n,0));
         pq.push({grid[0][0],{0,0}});
+        visited[0][0] = 1;
 
-        vector<pair<int,int>> dir = {{0,-1},{-1,0},{0,1},{1,0}};
+        vector<pair<int,int>> dir = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
         while(!pq.empty()) {
             int time = pq.top().first;
             int row = pq.top().second.first;
@@ -19,12 +20,10 @@ public:
                 int i = row + r;
                 int j = col + c;
 
-                if(i>=0 && i<n && j>=0 && j<n) {
-                    int maxCost = max(time, grid[i][j]);
-                    if(maxCost < dist[i][j]) {
-                        dist[i][j] = maxCost;
-                        pq.push({maxCost,{i,j}});
-                    }
+                if(i>=0 && i<n && j>=0 && j<n && !visited[i][j]) {
+                    visited[i][j] = 1;
+                    int currTime = max(time,grid[i][j]);
+                    pq.push({currTime,{i,j}});
                 }
             }
         }
