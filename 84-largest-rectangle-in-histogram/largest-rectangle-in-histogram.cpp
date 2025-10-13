@@ -37,14 +37,6 @@ public:
             int right = abs(pse[i] - i) * heights[i];
             int area = left + right - heights[i];
             maxArea = max(maxArea,area);
-            // if(nse[i] != -1) {
-            //     int area = abs(nse[i] - i) * heights[i];
-            //     maxArea = max(area,maxArea);
-            // }
-            // if(pse[i] != -1) {
-            //     int area = abs(pse[i] - i) * heights[i];
-            //     maxArea = max(area,maxArea);
-            // }
         }
         return maxArea;
 
