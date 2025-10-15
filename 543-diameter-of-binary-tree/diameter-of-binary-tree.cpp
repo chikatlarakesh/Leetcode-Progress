@@ -11,21 +11,18 @@
  */
 class Solution {
 public:
-    int maxDiameterOfTree(TreeNode* root,int& maxDiameter)
-    {
-        if(root==NULL) return 0;
+    int maxi = 0;
+    int findDiameter(TreeNode* root) {
+        if(root == NULL) return 0;
 
-        int left= maxDiameterOfTree(root->left,maxDiameter);
-        int right=maxDiameterOfTree(root->right,maxDiameter);
-        maxDiameter=max(maxDiameter,left+right);
-
-        return 1+ max(left,right);
+        int left = findDiameter(root->left);
+        int right = findDiameter(root->right);
+        maxi = max(maxi,left+right+1);
+        return 1 + max(left,right);
     }
 
     int diameterOfBinaryTree(TreeNode* root) {
-        if(root==NULL) return 0;
-        int maxDiameter=0;
-        maxDiameterOfTree(root,maxDiameter);
-        return maxDiameter;
+        findDiameter(root);
+        return maxi - 1;
     }
 };
