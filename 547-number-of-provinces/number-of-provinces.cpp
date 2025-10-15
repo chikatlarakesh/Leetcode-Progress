@@ -1,34 +1,33 @@
 class Solution {
 public:
-    void visitConnectedCities(int node,vector<vector<int>>& adj,vector<int>& visited) {
+    void dfs(int node, vector<int>& visited,vector<vector<int>>& adj) {
         visited[node] = 1;
+
         for(auto &it: adj[node]) {
             if(!visited[it]) {
-                visitConnectedCities(it,adj,visited);
+                dfs(it,visited,adj);
             }
         }
     }
 
     int findCircleNum(vector<vector<int>>& isConnected) {
         int n = isConnected.size();
-        vector<vector<int>> adj(n+1);
+        vector<vector<int>> adj(n);
 
         for(int i=0;i<n;i++) {
             for(int j=0;j<n;j++) {
-                if(i != j) {
-                    if(isConnected[i][j] == 1) {
-                        adj[i+1].push_back(j+1);
-                    }
+                if(i!=j && isConnected[i][j] == 1) {
+                    adj[i].push_back(j);
                 }
             }
         }
 
         int provinces = 0;
-        vector<int> visited(n+1,0);
-        for(int i=1;i<=n;i++) {
+        vector<int> visited(n,0);
+        for(int i=0;i<n;i++) {
             if(!visited[i]) {
                 provinces++;
-                visitConnectedCities(i,adj,visited);
+                dfs(i,visited,adj);
             }
         }
         return provinces;
