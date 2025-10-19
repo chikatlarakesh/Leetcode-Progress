@@ -11,40 +11,43 @@
  */
 class Solution {
 public:
-    class comparer
-    {
+    class comparer {
         public:
-        bool operator()(pair<int,int>& a,pair<int,int>& b)
-        {
-            if(a.first==b.first) return a.second<b.second;
-            return a.first<b.first;
+        bool operator()(const pair<int,int>& a,const pair<int,int>& b) {
+            if(a.first == b.first) return a.second < b.second;
+            else return a.first < b.first;
         }
     };
 
-    void verticalOrderTraversal(int row,int col,TreeNode* root,map<int,vector<pair<int,int>>>& mp)
-    {
-        if(root==NULL) return;
-
-        mp[col].push_back({row,root->val});
-        verticalOrderTraversal(row+1,col-1,root->left,mp);
-        verticalOrderTraversal(row+1,col+1,root->right,mp);
-    }
-
     vector<vector<int>> verticalTraversal(TreeNode* root) {
-        vector<vector<int>> result;
-        if(root==NULL) return result;
         map<int,vector<pair<int,int>>> mp;
-        verticalOrderTraversal(0,0,root,mp);
+        vector<vector<int>> result;
 
-        for(auto &[col,nodes]: mp)
-        {
-            sort(nodes.begin(),nodes.end(),comparer());
-            vector<int> arr;
-            for(auto &[row,value]: nodes)
-            {
-                arr.push_back(value);
+        using Node = pair<TreeNode*,pair<int,int>>;
+        queue<Node> q;
+        q.push({root,{0,0}});
+
+        while(!q.empty()) {
+            TreeNode* node = q.front().first;
+            int row = q.front().second.first;
+            int col = q.front().second.second;
+            q.pop();
+            mp[col].push_back({row,node->val});
+
+            if(node->left) {
+                q.push({node->left,{row+1,col-1}});
             }
-            result.push_back(arr);
+            if(node->right) {
+                q.push({node->right,{row+1,col+1}});
+            }
+        }
+
+        for(auto &it: mp) {
+            auto &vec = it.second;
+            sort(vec.begin(),vec.end(),comparer());
+            vector<int> temp;
+            for(auto &[row,val]: vec) temp.push_back(val);
+            result.push_back(temp);
         }
         return result;
     }
