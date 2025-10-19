@@ -12,9 +12,12 @@ public:
         q.push({row,col});
 
         vector<pair<int,int>> dir = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+        int maxRow = row, maxCol = col;
         while(!q.empty()) {
             int r = q.front().first;
             int c = q.front().second;
+            maxRow = max(maxRow,r);
+            maxCol = max(maxCol,c);
             q.pop();
 
             for(auto &[x,y]: dir) {
@@ -26,12 +29,10 @@ public:
                     q.push({i,j});
                 }
             }
-
-            if(q.empty()) {
-                result.push_back(r);
-                result.push_back(c);
-            }
         }
+        result.push_back(maxRow);
+        result.push_back(maxCol);
+
         return result;
     }
 
