@@ -1,43 +1,41 @@
 class Solution {
 public:
-    string findLexSmallestString(string s, int a, int b) 
-    {
-        unordered_set<string> st;
-        b = b%s.size();
-        
+    string findLexSmallestString(string s, int a, int b) {
+        int n = s.length();
+        unordered_set<string> visited;
         queue<string> q;
+        string ans = s;
         q.push(s);
-        st.insert(s);
-        while(q.size())
-        {
-            string curr = q.front();
-            q.pop();
-            string rot = curr; 
-            for(int i = 1; i<curr.size();i=i+2)
-            {
-                int z = (curr[i] -'0'+ a)%10 ; 
-                curr[i] = char(z+48);
-            }
-            reverse(rot.begin(), rot.end());
-            reverse(rot.begin(), rot.begin() + b);
-            reverse(rot.begin() + b, rot.end());
-            if(st.find(rot)==st.end())
-            {
-                q.push(rot);
-                st.insert(rot);
-            }
-            if(st.find(curr)==st.end())
-            {
-                q.push(curr);
-                st.insert(curr);
-            }
-                 
-        }
-       vector<string> v(st.begin(),st.end());
-       sort(v.begin(),v.end());
-       return v[0];
-        
+        visited.insert(s);
 
-        
+        while(!q.empty()) {
+            string temp = q.front();
+            q.pop();
+            if(temp < ans) ans = temp;
+
+            // add
+            string addedString = temp;
+            for(int i=1;i<n;i+=2) {
+                int val = (addedString[i] - '0') + a;
+                val = val % 10;
+                addedString[i] = val + '0';
+            }
+            if(visited.find(addedString) == visited.end()) {
+                visited.insert(addedString);
+                q.push(addedString);
+            }
+
+            // rotate
+            string rotatedString = temp;
+            for(int i=0;i<n;i++) {
+                int ind = (i + b) % n;
+                rotatedString[ind] = temp[i];
+            }
+            if(visited.find(rotatedString) == visited.end()) {
+                visited.insert(rotatedString);
+                q.push(rotatedString);
+            }
+        }
+        return ans;
     }
 };
