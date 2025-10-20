@@ -1,30 +1,31 @@
 class Solution {
 public:
+    using Node = pair<int,string>;
     int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
         int n = beginWord.length();
-        unordered_set<string> s(wordList.begin(),wordList.end());
-        if(s.find(endWord) == s.end()) return 0;
+        unordered_set<string> visited;
+        for(string word: wordList) visited.insert(word);
+        if(!visited.count(endWord)) return 0;
 
-        queue<pair<string,int>> q;
-        q.push({beginWord,1});
-        s.erase(beginWord);
+        // {steps,word};
+        priority_queue<Node,vector<Node>,greater<Node>> pq;
+        pq.push({1,beginWord});
 
-        while(!q.empty()) {
-            string word = q.front().first;
-            int steps = q.front().second;
-            q.pop();
+        while(!pq.empty()) {
+            int steps = pq.top().first;
+            string word = pq.top().second;
+            pq.pop();
+            visited.erase(word);
             if(word == endWord) return steps;
 
             for(int i=0;i<n;i++) {
-                char originalChar = word[i];
-                for(char ch='a';ch<='z';ch++) {
-                    word[i] = ch;
-                    if(s.find(word) != s.end()) {
-                        s.erase(word);
-                        q.push({word,steps+1});
+                string temp = word;
+                for(char ch = 'a';ch <= 'z'; ch++) {
+                    temp[i] = ch;
+                    if(visited.count(temp)) {
+                        pq.push({steps+1,temp});
                     }
                 }
-                word[i] = originalChar;
             }
         }
         return 0;
