@@ -37,18 +37,6 @@ public:
             }
         }
         return -1;
-
-        // find zero coordinates
-        int row = 0,col = 0;
-        for(int i=0;i<n;i++) {
-            for(int j=0;j<m;j++) {
-                if(board[i][j] == 0) {
-                    row = i;
-                    col = j;
-                    break;
-                }
-            }
-        }
     }
 
 
