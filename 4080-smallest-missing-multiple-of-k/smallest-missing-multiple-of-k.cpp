@@ -1,15 +1,12 @@
 class Solution {
 public:
     int missingMultiple(vector<int>& nums, int k) {
-        int val = k;
         int n = nums.size();
-        unordered_map<int,int> mp;
-        for(int num:nums) mp[num]++;
-
-        while(true) {
-            if(mp.find(val) == mp.end()) return val;
-            val += k;
+        sort(nums.begin(),nums.end());
+        int missing = k;
+        for(int num : nums) {
+            if(missing == num) missing += k;
         }
-        return -1;
+        return missing;
     }
 };
