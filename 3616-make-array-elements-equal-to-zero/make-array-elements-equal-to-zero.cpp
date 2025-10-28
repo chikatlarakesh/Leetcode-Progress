@@ -2,25 +2,16 @@ class Solution {
 public:
     int countValidSelections(vector<int>& nums) {
         int n = nums.size();
-        int zeroCount = 0;
-        vector<int> prefix(n);
-        prefix[0] = nums[0];
-        if(nums[0] == 0) zeroCount++;
-        for(int i=1;i<n;i++) {
-            prefix[i] = prefix[i-1] + nums[i];
-            if(nums[i] == 0) zeroCount++;
-        }
-        if(zeroCount == n) return 2 * n;
+        int totalSum = accumulate(nums.begin(),nums.end(),0);
+        int count = 0, leftSum = 0;
 
-        int count = 0;
         for(int i=0;i<n;i++) {
-            if(nums[i] == 0) {
-                int left = 0;
-                if(i > 0) left = prefix[i-1];
-                int right = prefix[n-1] - prefix[i];
+            leftSum += nums[i];
+            int rightSum = totalSum - leftSum;
 
-                if(left == right) count += 2;
-                else if(abs(left - right) <= 1) count++;
+            if(nums[i] == 0) {
+                if(leftSum == rightSum) count += 2;
+                else if(abs(leftSum - rightSum) == 1) count++;
             }
         }
         return count;
