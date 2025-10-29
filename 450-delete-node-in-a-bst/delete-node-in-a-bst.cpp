@@ -24,9 +24,15 @@ public:
             if(root->left) {
                 TreeNode* bottomRight = findRight(root->left);
                 bottomRight->right = root->right;
-                return root->left;
+                TreeNode* newRoot = root->left;
+                delete root;
+                return newRoot;
             }
-            else return root->right;
+            else {
+                TreeNode* newRoot = root->right;
+                delete root;
+                return newRoot;
+            }
         }
         else if(root->val > key) {
             root->left = deleteNode(root->left,key);
