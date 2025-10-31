@@ -16,7 +16,11 @@ public:
 
         findKthSmallest(root->left,ans,k);
         k--;
-        if(k == 0) ans = root->val;
+        if(k == 0) {
+            ans = root->val;
+            return;
+        }
+        if(ans != -1) return;
         findKthSmallest(root->right,ans,k);
     }
 
