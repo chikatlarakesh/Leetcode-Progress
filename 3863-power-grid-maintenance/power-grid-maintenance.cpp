@@ -1,72 +1,94 @@
-#include <vector>
-#include <unordered_map>
-#include <queue>
-
-using namespace std;
-
-class DSU {
-public:
-    vector<int> parent;
-
-    DSU(int n) {
-        parent.resize(n + 1);
-        for (int i = 0; i <= n; ++i)
-            parent[i] = i;
-    }
-
-    int find(int x) {
-        if (parent[x] != x)
-            parent[x] = find(parent[x]);  // path compression
-        return parent[x];
-    }
-
-    bool unite(int x, int y) {
-        int px = find(x), py = find(y);
-        if (px == py) return false;
-        parent[py] = px;
-        return true;
-    }
-};
-
 class Solution {
 public:
-    vector<int> processQueries(int n, vector<vector<int>>& connections, vector<vector<int>>& queries) {
-        DSU dsu(n);
-        vector<bool> online(n + 1, true);
+    class DisjointSet {
+    public:
+        vector<int> rank, parent, size;
 
-        for (auto& conn : connections) {
-            int u = conn[0], v = conn[1];
-            dsu.unite(u, v);
-        }
-
-        unordered_map<int, priority_queue<int, vector<int>, greater<int>>> component_heap;
-        for (int station = 1; station <= n; ++station) {
-            int root = dsu.find(station);
-            component_heap[root].push(station);
-        }
-
-        vector<int> result;
-
-        for (auto& query : queries) {
-            int type = query[0], x = query[1];
-            if (type == 2) {
-                online[x] = false;
-            } else {
-                if (online[x]) {
-                    result.push_back(x);
-                } else {
-                    int root = dsu.find(x);
-                    auto& heap = component_heap[root];
-
-                    while (!heap.empty() && !online[heap.top()]) {
-                        heap.pop();
-                    }
-
-                    result.push_back(heap.empty() ? -1 : heap.top());
-                }
+        DisjointSet(int n) {
+            rank.resize(n+1,1);
+            parent.resize(n+1);
+            size.resize(n+1,1);
+            for(int i=0;i<=n;i++) {
+                parent[i] = i;
             }
         }
 
+        int findUPar(int node) {
+            if(node == parent[node]) return node;
+            return parent[node] = findUPar(parent[node]);
+        }
+
+        void UnionByRank(int u,int v) {
+            int ulp_u = findUPar(u);
+            int ulp_v = findUPar(v);
+
+            if(ulp_u == ulp_v) return;
+
+            if(rank[ulp_u] > rank[ulp_v]) {
+                parent[ulp_v] = ulp_u;
+            }
+            else if(rank[ulp_v] > rank[ulp_u]) {
+                parent[ulp_u] = ulp_v;
+            }
+            else {
+                parent[ulp_u] = ulp_v;
+                rank[ulp_v]++;
+            }
+        }
+
+        void UnionBySize(int u,int v) {
+            int ulp_u = findUPar(u);
+            int ulp_v = findUPar(v);
+
+            if(ulp_u == ulp_v) return;
+
+            if(size[ulp_u] > size[ulp_v]) {
+                parent[ulp_v] = ulp_u;
+                size[ulp_u] += size[ulp_v];
+            }
+            else {
+                parent[ulp_u] = ulp_v;
+                size[ulp_v] += size[ulp_u];
+            }
+        }
+    };
+
+    vector<int> processQueries(int c, vector<vector<int>>& connections, vector<vector<int>>& queries) {
+        int n = connections.size();
+        DisjointSet ds(c+1);
+        unordered_map<int,set<int>> mp;
+
+        for(auto &edge: connections) {
+            int u = edge[0];
+            int v = edge[1];
+            if(ds.findUPar(u) != ds.findUPar(v)) {
+                ds.UnionByRank(u,v);
+            }
+        }
+
+        for(int i=1;i<=c;i++) {
+            mp[ds.findUPar(i)].insert(i);
+        }
+
+        vector<int> result;
+        for(auto &query: queries) {
+            int signal = query[0];
+            int node = query[1];
+
+            int parent = ds.findUPar(node);
+            if(signal == 2) {
+                mp[parent].erase(node);
+            }
+            else {
+                if(mp[parent].count(node)) {
+                    result.push_back(node);
+                }
+                else {
+                    if(mp[parent].empty()) result.push_back(-1);
+                    else result.push_back(*mp[parent].begin());
+                }
+            }
+        }
         return result;
     }
 };
