@@ -1,35 +1,15 @@
 class Solution {
 public:
     int minCost(string colors, vector<int>& neededTime) {
-        int n = colors.length();
-        int minTime = 0;
-        int prev = neededTime[0];
-        for(int i=1;i<n;i++) {
-            int curr = neededTime[i];
-            if(colors[i] != colors[i-1]) {
-                prev = 0;
+        int remTime = 0;
+        int totalTime = accumulate(neededTime.begin(),neededTime.end(),0);
+        int n = colors.size();
+        for(int i=0;i<n;i++) {
+            if(i < n-1 && colors[i] == colors[i+1]) {
+                    neededTime[i+1] = max(neededTime[i],neededTime[i+1]);
             }
-            minTime += min(prev,curr);
-            prev = max(prev,curr);
+            else remTime += neededTime[i];
         }
-        return minTime;
-
-
-        // vector<pair<char,int>> arr;
-        // arr.push_back({colors[0],neededTime[0]});
-        // int minTime = 0;
-        // for(int i=1;i<n;i++) {
-        //     char ch = arr.back().first;
-        //     int time = arr.back().second;
-        //     if(colors[i] == ch) {
-        //         if(time < neededTime[i]) {
-        //             minTime += time;
-        //             arr.back().second = neededTime[i];
-        //         }
-        //         else minTime += neededTime[i];
-        //     }
-        //     else arr.push_back({colors[i],neededTime[i]});
-        // }
-        // return minTime;
+        return totalTime - remTime;
     }
 };
