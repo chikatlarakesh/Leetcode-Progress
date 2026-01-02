@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/n-repeated-element-in-size-2n-array">1001. N-Repeated Element in Size 2N Array</a></h2><h3>Easy</h3><hr><p>You are given an integer array <code>nums</code> with the following properties:</p>
+<h2><a href="https://leetcode.com/problems/n-repeated-element-in-size-2n-array">N-Repeated Element in Size 2N Array</a></h2> <img src='https://img.shields.io/badge/Difficulty-Easy-brightgreen' alt='Difficulty: Easy' /><hr><p>You are given an integer array <code>nums</code> with the following properties:</p>
 
 <ul>
 	<li><code>nums.length == 2 * n</code>.</li>
