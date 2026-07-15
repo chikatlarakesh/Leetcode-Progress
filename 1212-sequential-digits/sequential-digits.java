@@ -1,14 +1,14 @@
 class Solution {
     public List<Integer> sequentialDigits(int low, int high) {
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        Queue<Integer> q = new LinkedList<>();
 
         for(int i=1;i<9;i++) {
-            pq.offer(i);
+            q.offer(i);
         }
 
         List<Integer> result = new ArrayList<>();
-        while(!pq.isEmpty()) {
-            int value = pq.poll();
+        while(!q.isEmpty()) {
+            int value = q.poll();
             if(value > high) break;
             if(value >= low && value <= high) {
                 result.add(value);
@@ -17,7 +17,7 @@ class Solution {
             int lastDigit = value % 10;
             if(lastDigit == 9) continue;
             int newValue = (value * 10) + (lastDigit + 1);
-            pq.offer(newValue);
+            q.offer(newValue);
         }
         return result;
     }
