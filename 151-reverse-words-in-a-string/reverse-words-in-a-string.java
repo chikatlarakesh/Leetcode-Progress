@@ -1,29 +1,58 @@
 class Solution {
     public String reverseWords(String s) {
-        s = s.trim();
-        int n = s.length();
-        Stack<Character> st = new Stack<>();
-        StringBuilder sb = new StringBuilder();
 
-        int i = n-1;
-        while(i >= 0) {
-            char ch = s.charAt(i);
-            if(ch == ' ') {
-                while(s.charAt(i) == ' ') i--;
-                while(!st.isEmpty()) {
-                    sb.append(st.pop());
-                }
-                sb.append(' ');
+        StringBuilder sb = new StringBuilder(s);
+        int n = sb.length();
+
+        // Reverse the entire string
+        sb.reverse();
+
+        int i = 0, j = 0;
+
+        while (j < n) {
+
+            // Skip spaces
+            while (j < n && sb.charAt(j) == ' ') {
+                j++;
             }
-            else {
-                st.push(ch);
-                i--;
+
+            int start = i;
+
+            // Copy the word to the front
+            while (j < n && sb.charAt(j) != ' ') {
+                sb.setCharAt(i, sb.charAt(j));
+                i++;
+                j++;
+            }
+
+            int end = i;
+
+            // Reverse the current word
+            reverse(sb, start, end - 1);
+
+            // Add one space after the word
+            if (j < n) {
+                sb.setCharAt(i, ' ');
+                i++;
             }
         }
 
-        while(!st.isEmpty()) {
-            sb.append(st.pop());
+        // Remove trailing space
+        if (i > 0 && sb.charAt(i - 1) == ' ') {
+            i--;
         }
-        return sb.toString();
+
+        return sb.substring(0, i);
+    }
+
+    private void reverse(StringBuilder sb, int left, int right) {
+        while (left < right) {
+            char temp = sb.charAt(left);
+            sb.setCharAt(left, sb.charAt(right));
+            sb.setCharAt(right, temp);
+
+            left++;
+            right--;
+        }
     }
 }
