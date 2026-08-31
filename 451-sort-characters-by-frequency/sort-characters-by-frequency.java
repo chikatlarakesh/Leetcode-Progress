@@ -11,9 +11,9 @@ class Solution {
 
     public String frequencySort(String s) {
         int n = s.length();
-        Pair[] hash = new Pair[256];
+        Pair[] hash = new Pair[128];
 
-        for(int i=0;i<256;i++) {
+        for(int i=0;i<128;i++) {
             hash[i] = new Pair(0,(char)(i));
         }
 
@@ -27,7 +27,7 @@ class Solution {
         });
 
         StringBuilder sb = new StringBuilder();
-        for(int i=0;i<256;i++) {
+        for(int i=0;i<128;i++) {
             int freq = hash[i].freq;
             if(freq == 0) break;
             char ch = hash[i].ch;
