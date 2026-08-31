@@ -22,8 +22,8 @@ class Solution {
         }
 
         Arrays.sort(hash,(a,b) -> {
-            if(a.freq != b.freq) return b.freq - a.freq;
-            else return a.ch - b.ch;
+            if(a.freq != b.freq) return Integer.compare(b.freq,a.freq);
+            else return Character.compare(a.ch,b.ch);
         });
 
         StringBuilder sb = new StringBuilder();
