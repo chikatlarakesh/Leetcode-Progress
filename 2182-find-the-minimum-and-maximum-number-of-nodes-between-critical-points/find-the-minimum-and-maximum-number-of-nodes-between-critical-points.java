@@ -30,7 +30,6 @@ class Solution {
         int n = criticalPoints.size();
         if(n <= 1) return new int[]{-1,-1};
 
-        Collections.sort(criticalPoints);
         int maxDistance = criticalPoints.get(n-1) - criticalPoints.get(0);
 
         int minDistance = Integer.MAX_VALUE;
